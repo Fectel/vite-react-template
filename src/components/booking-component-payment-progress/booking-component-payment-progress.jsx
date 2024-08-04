@@ -11,6 +11,7 @@ export default function BookingComponentPaymentProgress({remainingBalance, contr
 
         axios({
             url: 'pay-mariachi-remaining-balance',
+            baseURL: "https://triumphant-beauty-production.up.railway.app",
             // url: 'create-pay-deposit-session',
             method: 'post',
             params:

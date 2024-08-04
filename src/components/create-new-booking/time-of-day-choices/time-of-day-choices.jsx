@@ -249,6 +249,8 @@ const TimeOfDayChoices = ({
         //call server
         axios({
             url: 'check-availability',
+            baseURL: "https://triumphant-beauty-production.up.railway.app",
+
             method: 'get',
             params: {
                 dateStart: dateStart,

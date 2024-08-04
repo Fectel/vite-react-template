@@ -77,6 +77,8 @@ export default function BookingsComponent({booking, setRefresh}){
         axios({
             url: 'pay-mariachi-remaining-balance',
             // url: 'create-pay-deposit-session',
+            baseURL: "https://triumphant-beauty-production.up.railway.app",
+
             method: 'post',
             params:
                 {
