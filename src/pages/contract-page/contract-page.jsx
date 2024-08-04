@@ -394,41 +394,47 @@ const ContractPage = () => {
 
                 {contract !== undefined ? (
                     <IonContent >
-                        <IonModal
-                            style={{
-                                // width:"70%",
-                                margin:"8em auto 0",
-                            }}
-                            ref={modal}
-                            isOpen={isOpen}
-                            canDismiss={false}
-                        >
-                            {showSignInWithPhone === true && (
-                                <FirebaseUiComponent />
-                            )}
-                            <div style={{margin:'6em auto 0',
+                        {currentUser === undefined || currentUser === null && (
+                            <IonModal
+                                style={{
+                                    // width:"70%",
+                                    margin:"8em auto 0",
+                                }}
+                                ref={modal}
+                                isOpen={isOpen}
+                                canDismiss={false}
+                            >
+                                {showSignInWithPhone === true ? (
+                                    <FirebaseUiComponent />
+                                ):(
+                                    <div style={{margin:'6em auto 0',
 
-                                width:"fit-content"
-                            }}>
-                                <IonButton
+                                        width:"fit-content"
+                                    }}>
+                                        <IonButton
 
-                                    style={{
-                                        width:"100%",
-                                        borderRadius: "0",
+                                            style={{
+                                                width:"100%",
+                                                borderRadius: "0",
 
-                                        fontSize:".9rem"
-                                    }}
-                                    // size="medium"
+                                                fontSize:".9rem"
+                                            }}
+                                            // size="medium"
 
-                                    onClick={() => setShowSignInWithPhone(true)}
-                                >
-                                    <IonIcon style={{marginRight:".3em",}} icon={callOutline} />
-                                    Sign In with Phone Number</IonButton>
+                                            onClick={() => setShowSignInWithPhone(true)}
+                                        >
+                                            <IonIcon style={{marginRight:".3em",}} icon={callOutline} />
+                                            Sign In with Phone Number</IonButton>
 
-                            </div>
-                        </IonModal>
+                                    </div>
+                                )}
 
-                    <IonCard style={{width:"95%", maxWidth:"55em", margin:"1em auto",
+
+                            </IonModal>
+                        )}
+
+
+                        <IonCard style={{width:"95%", maxWidth:"55em", margin:"1em auto",
                         // backgroundColor:"rgba(255,249,187,0.5)"}}
                              backgroundColor:"black"}}
                     >
