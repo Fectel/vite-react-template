@@ -1,0 +1,28 @@
+.booking-form-date-data-display-container {
+  padding-top: .4em;
+  border: solid thin;
+  text-align: center;
+  height: 5em;
+  font-size: 2rem;
+  display: flex;
+  flex-flow: column;
+}
+.booking-form-date-data-display-edit-button{
+  border: solid;
+  width: fit-content;
+  margin: auto;
+  padding: 0 1em;
+  font-size: 1rem;
+  cursor: pointer;
+  &:hover{
+    background-color: rgba(40, 46, 63, 0.63);
+    color: white;
+  }
+
+}
+.booking-form-date-data-display-date-text{
+
+}
+.booking-form-date-data-display-time-text{
+
+}

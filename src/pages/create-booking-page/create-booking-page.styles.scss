@@ -1,0 +1,50 @@
+.booking-page-breadcrumb{
+  cursor: pointer;
+  border-bottom: solid;
+  border-top: solid;
+  padding: 0em;
+  margin: 0;
+  color: rgba(128, 128, 128, 0.5);
+}
+
+@media (max-width: 390px) {
+  .create-booking-card{
+    width: 100%;
+    margin: 2em auto;
+  }
+
+}
+
+@media (max-width: 314px) {
+  .booking-page-breadcrumb{
+    font-size: .3rem;
+  }
+
+}
+@media (min-width: 315px) {
+  .booking-page-breadcrumb{
+    font-size: .4rem;
+  }
+
+
+}
+@media (min-width: 336px) {
+  .booking-page-breadcrumb{
+    font-size: .5rem;
+  }
+
+}
+@media (min-width: 395px) {
+  .booking-page-breadcrumb{
+    font-size: .7rem;
+  }
+
+}
+@media (min-width: 550px) {
+
+  .create-booking-card{
+    width: 38em;
+    margin: 2em auto;
+  }
+
+}

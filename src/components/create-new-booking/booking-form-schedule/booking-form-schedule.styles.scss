@@ -1,0 +1,42 @@
+.select-time-title{
+  font-size: 2rem;
+  font-family: "Libre Baskerville";
+  background-color: #490411;
+  text-align: center;
+  color: #FFD454;
+  font-weight: normal;
+  margin-bottom: 1em;
+
+}
+.select-date-title{
+  font-size: 2rem;
+  font-family: "Libre Baskerville";
+  background-color: #490411;
+  text-align: center;
+  color: #FFD454;
+  font-weight: normal;
+  margin-bottom: 1em;
+}
+@media (max-width: 315px ) {
+  .select-time-title{
+    font-size: .7rem;
+  }
+  .select-date-and-time-col{
+    marginLeft: .1em;
+  }
+  
+}
+@media (max-width: 295px ) {
+  .select-time-title{
+    font-size: .5rem;
+  }
+  .select-date-and-time-col{
+    marginLeft: 0;
+  }
+
+}
+
+.select-date-and-time-col{
+  width: fit-content;
+  marginLeft: 1em;
+}

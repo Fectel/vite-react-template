@@ -1,0 +1,134 @@
+.header-container{
+
+  height: 24em;
+}
+
+
+.header-title-text-1{
+  margin-top: .1em;
+  font-size: 3.2rem;
+
+}
+
+.header-title-text-2{
+  font-size: 3rem;
+}
+
+.header-title-container{
+  font-family: "Libre Baskerville";
+  background-color: #490411;
+  text-align: center;
+  color: #FFD454;
+  font-weight: normal;
+  //position: fixed;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 9em;
+
+}
+
+.header-img-container{
+  width: 30em;
+  margin: auto;
+  margin-top: .5em;
+  //background-color: #4eb626;
+  position: relative;
+  //border: solid thin;
+
+}
+img{
+
+  width: 100%;
+}
+.header-without-img-container{
+
+  height: 9em;
+}
+@media (max-width: 700px) {
+  .header-container{
+
+    height: 20em;
+  }
+
+  .header-title-text-1{
+    font-size: 1.9rem;
+
+  }
+  .header-title-text-2{
+    font-size: 2.4rem;
+  }
+  .header-title-container{
+    height: 6em;
+  }
+  //
+  .header-img-container{
+    height: fit-content;
+    width: 26em;
+    margin-top: .1em;
+    //background-color: #FFD454;
+    background-size: contain;
+  }
+  .header-without-img-container{
+
+    height: 6em;
+  }
+
+}@media (max-width: 400px) {
+  .header-container{
+
+    height: 15em;
+  }
+  .header-title-text-1{
+    font-size: 1.5rem;
+
+  }
+  .header-title-text-2{
+    font-size: 1.8rem;
+  }
+  .header-title-container{
+    height: 4em;
+  }
+  //
+  .header-img-container{
+    height: fit-content;
+    width: 20em;
+    margin-top: .1em;
+    //background-color: #FFD454;
+    background-size: contain;
+  }
+  .header-without-img-container{
+
+    height: 4em;
+  }
+
+}
+@media (max-width: 300px) {
+  .header-container{
+
+    height: 11.5em;
+  }
+  .header-title-text-1{
+    font-size: 1.2rem;
+
+  }
+  .header-title-text-2{
+    font-size: 1.5rem;
+  }
+  .header-title-container{
+    height: 3.5em;
+  }
+  //
+  .header-img-container{
+    height: fit-content;
+    width: 15em;
+    margin-top: .1em;
+    //background-color: #FFD454;
+    background-size: contain;
+  }
+  .header-without-img-container{
+
+    height: 3.5em;
+  }
+
+}

@@ -1,0 +1,104 @@
+.time-of-day-choice-container{
+  //background-color: brown;
+  width: 100%;
+  height: 6em;
+  text-align: center;
+  font-size: .8rem;
+  border-radius: 4px;
+  border: solid thin;
+  cursor: pointer;
+
+  //height: 3em;
+  margin:  0 0  1em 0;
+  padding: 0 .2em;
+  &:hover{
+    background-color: #7196F333;
+  }
+}
+
+
+.time-of-day-choices-container-div{
+  display: flex;
+  flex-flow: row;
+
+  //flex-wrap: wrap;
+  //background-color: #FFD454;
+  width: fit-content;
+  margin: 1em auto;
+  //justify-content: space-evenly;
+}
+.time-of-day-choice-time-title{
+  font-size: .9rem;
+  font-weight: bold;
+}
+.time-start-containers-div{
+  width: 100%;
+  display: flex;
+  //display: grid;
+  //grid-row: span;
+  flex-wrap: wrap;
+  //flex-flow: column;
+  //background-color: #FFD454;
+  //overflow-style: marquee-block;
+  height: 10em;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.time-of-day-choices-title{
+  display: flex;
+  width: fit-content;
+  font-size: 1.3rem;
+  margin: auto;
+}
+.time-of-day-choices-page-container-div{
+  width: 100%;
+  margin-bottom: 0;
+}
+.render-correct-start-times-div{
+  border: solid thin;
+  width: 80%;
+  margin: auto;
+
+}
+.time-of-day-and-start-times-container-div{
+  display: flex;
+  flex-flow: column;
+  //background-color: #490411;
+  //background-color: #490411;
+}
+
+@media (max-width: 365px) {
+  .time-of-day-choice-container {
+   font-size: .4rem;
+    height: 6em;
+
+  }
+  .time-of-day-choice-time-title{
+    font-size: .8rem;
+  }
+  }
+@media (max-width: 315px) {
+  .time-of-day-choice-container {
+   font-size: .4rem;
+    height: 6em;
+    width: 8em;
+
+  }
+  .time-of-day-choice-time-title {
+    font-size: .5rem;
+    font-weight: bold;
+
+  }
+}@media (max-width: 280px) {
+  .time-of-day-choice-container {
+   font-size: .35rem;
+    height: 6em;
+    width: 8em;
+
+  }
+  .time-of-day-choice-time-title {
+    font-size: .5rem;
+    font-weight: bold;
+
+  }
+}

@@ -1,0 +1,37 @@
+.mariachi-price-option-text{
+  margin: auto;
+  font-size: .8rem;
+  width: 100%;
+}
+.mariachi-price-option{
+  margin: auto;
+
+  cursor: pointer;
+
+  width: 7em;
+  text-align: center;
+  background-color: white;
+  border: solid;
+  border-radius: 3px;
+}
+.price-wrapper{
+  position: relative;
+  display: inline-block;
+}
+
+.price-slash{
+  position: relative;
+  width: 40%;
+  height: 0;
+  border-top: 2px solid red;
+  transform: rotate(-16deg);
+  bottom: .8em;
+  left: 3.8em;
+}
+
+.price{ font-size: 30px;}
+.discounted-price-div{
+  font-size: .8rem;
+  margin: auto;
+  font-weight: bold;
+}
