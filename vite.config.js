@@ -14,7 +14,7 @@ export default defineConfig({
       }
     },
     // hmr: {
-    //   host: "https://triumphant-beauty-production.up.railway.app",
+    //   host: "https://triumphant-beauty-production.up.railway.app/webhook",
     //   protocol: "wss",
     // },
   },
