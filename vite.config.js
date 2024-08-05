@@ -12,7 +12,10 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\api/, ''),
       }
-    }
+    },
+    hmr: {
+      host: "https://triumphant-beauty-production.up.railway.app/",
+      protocol: "ws",
   },
   plugins: [react()],
 })
