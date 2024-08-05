@@ -13,10 +13,10 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\api/, ''),
       }
     },
-    hmr: {
-      host: "https://triumphant-beauty-production.up.railway.app",
-      protocol: "wss",
-    },
+    // hmr: {
+    //   host: "https://triumphant-beauty-production.up.railway.app",
+    //   protocol: "wss",
+    // },
   },
   plugins: [react()],
 })
