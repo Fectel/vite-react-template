@@ -18,7 +18,7 @@ import { useParams } from 'react-router-dom';
 
 const SuccessPayingDeposit = () => {
     console.log("Succds page")
-    const client = new W3CWebSocket('wss://https://triumphant-beauty-production.up.railway.app');
+    const client = new W3CWebSocket('//https://triumphant-beauty-production.up.railway.app');
 
     const [url , setUrl ] = useState("")
     const [amount , setAmount ] = useState(0)
