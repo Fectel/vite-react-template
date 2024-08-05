@@ -14,8 +14,9 @@ export default defineConfig({
       }
     },
     hmr: {
-      host: "https://triumphant-beauty-production.up.railway.app/",
-      protocol: "ws",
+      host: "https://triumphant-beauty-production.up.railway.app",
+      protocol: "wss",
+    },
   },
   plugins: [react()],
 })
