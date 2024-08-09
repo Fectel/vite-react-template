@@ -221,7 +221,7 @@ const ContractPage = () => {
                 axios({
                     url: 'pay-mariachi-deposit',
                     // url: 'create-pay-deposit-session',
-                    baseURL: "https://triumphant-beauty-production.up.railway.app",
+                    baseURL: "https://mariachichingon.com",
 
                     method: 'post',
                     params:
