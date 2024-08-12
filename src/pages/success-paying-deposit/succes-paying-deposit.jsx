@@ -19,7 +19,7 @@ import { useParams } from 'react-router-dom';
 const SuccessPayingDeposit = () => {
     console.log("Succds page")
     // const client = new W3CWebSocket('wss://https://badassmariachi.com:2096');
-        const client = new W3CWebSocket('https://badassmariachi.com:2096');
+        const client = new W3CWebSocket('https://badassmariachi.com/:2096');
 
 
     const [url , setUrl ] = useState("")
