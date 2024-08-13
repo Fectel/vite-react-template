@@ -17,9 +17,9 @@ const SuccessPayingDeposit = () => {
     console.log("Succds page")
     const client = new W3CWebSocket('https://badassmariachi.com/');
     const socket = io.connect('https://badassmariachi.com/')
-                             //  , {transports: ['websocket']
-                             //     ,}
-                             // )
+                              , {transports: ['websocket']
+                                 ,}
+                             )
 
     const [url , setUrl ] = useState("")
     const [amount , setAmount ] = useState(0)
