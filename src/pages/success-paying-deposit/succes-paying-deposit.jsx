@@ -7,18 +7,16 @@ import {
      IonModal,
     IonPage
 } from "@ionic/react";
-
 import { w3cwebsocket as W3CWebSocket} from "websocket";
-
 import { updateBookingStatusToReserved} from "../../firebase";
-
+import io from "socket.io-client"
 import { useParams } from 'react-router-dom';
 
 
 const SuccessPayingDeposit = () => {
     console.log("Succds page")
     const client = new W3CWebSocket('https://badassmariachi.com/');
-
+    const socket = io.connect('https://badassmariachi.com/')
 
     const [url , setUrl ] = useState("")
     const [amount , setAmount ] = useState(0)
