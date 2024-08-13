@@ -10,6 +10,7 @@ import {
 
 import { w3cwebsocket as W3CWebSocket} from "websocket";
 
+import WebSocket from 'ws';
 
 import { updateBookingStatusToReserved} from "../../firebase";
 
@@ -20,6 +21,7 @@ const SuccessPayingDeposit = () => {
     console.log("Succds page")
     const client = new W3CWebSocket('https://badassmariachi.com/ws:8443');
         // const client = new W3CWebSocket('https://badassmariachi.com:2096');
+    const ws = new WebSocket('wss://www.baddassmariachi.com/ws:84443');
 
 
     const [url , setUrl ] = useState("")
@@ -34,6 +36,16 @@ const SuccessPayingDeposit = () => {
 
     function checkClientWSConnection(){
 
+         ws.on('error', console.error);
+
+        ws.on('open', function open() {
+            // ws.send('something, open and connected');
+            console.log("on open")
+        });
+
+        ws.on('message', function message(data) {
+            console.log('received: %s', data);
+        });
         console.log("checkClientWSConnection")
         client.onopen = () => {
             console.log('Websocket CLiecnt Connected')
