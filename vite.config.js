@@ -11,6 +11,11 @@ export default defineConfig({
         target:"https://triumphant-beauty-production.up.railway.app",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\api/, ''),
+      },
+      '/socket.io': {
+        target:"https://badassmariachi.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\api/, ''),
       }
     },
     // hmr: {
