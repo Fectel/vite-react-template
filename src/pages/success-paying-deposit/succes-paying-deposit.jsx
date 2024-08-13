@@ -21,7 +21,7 @@ const SuccessPayingDeposit = () => {
     console.log("Succds page")
     const client = new W3CWebSocket('https://badassmariachi.com/ws:8443');
         // const client = new W3CWebSocket('https://badassmariachi.com:2096');
-    const ws = new WebSocket('wss://www.baddassmariachi.com/ws:84443');
+    const ws = new WebSocket('wss://https://baddassmariachi.com/ws:8443');
 
 
     const [url , setUrl ] = useState("")
