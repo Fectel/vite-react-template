@@ -15,7 +15,7 @@ import { useParams } from 'react-router-dom';
 
 const SuccessPayingDeposit = () => {
     // const socket = io.connect('https://badassmariachi.com/'
-    const socket = io.connect('https://mariachihero.com/'
+    const socket = io.connect('https://mariachihero.com/:2096'
         , {transports: ['websocket'],}, 
                              )
 
