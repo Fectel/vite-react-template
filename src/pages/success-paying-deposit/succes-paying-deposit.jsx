@@ -14,9 +14,7 @@ import { useParams } from 'react-router-dom';
 
 
 const SuccessPayingDeposit = () => {
-    console.log("Succds page")
-    // const client = new W3CWebSocket('https://badassmariachi.com/:8443');
-    const socket = io.connect('https://badassmariachi.com/'
+    const socket = io.connect('https://badassmariachi.com'
                               , {transports: ['websocket']
                                  ,}
                              )
@@ -27,8 +25,7 @@ const SuccessPayingDeposit = () => {
     const params = useParams();
 
 
-    console.log("Succds page", params)
-    // console.log("Succds page", params)
+    console.log("Success page")
 
     
 
@@ -85,18 +82,12 @@ const SuccessPayingDeposit = () => {
 
     useEffect(() => {
         checkClientWSConnection()
-
-        console.log("Succds page")
-
-
-        console.log(params)
-
+        console.log("PArams",params)
 
     },[])
 
 
     console.log(url)
-    // console.log(ms)
     return (
 
         <IonPage>
