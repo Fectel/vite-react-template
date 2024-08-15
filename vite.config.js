@@ -12,11 +12,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\api/, ''),
       },
-      '/socket.io': {
-        target:"https://badassmariachi.com",
-        changeOrigin: true,
-        // rewrite: (path) => path.replace(/^\api/, ''),
-      }
+      // '/socket.io': {
+      //   target:"https://badassmariachi.com",
+      //   changeOrigin: true,
+        // rewrite: (path) => path.replace(/^\socekt.io/, ''),
+      // }
     },
     // hmr: {
     //   host: "https://triumphant-beauty-production.up.railway.app/webhook",
