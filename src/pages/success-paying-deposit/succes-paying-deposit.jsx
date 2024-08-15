@@ -31,6 +31,9 @@ const SuccessPayingDeposit = () => {
 
     function checkClientWSConnection(){
 
+        socket.on("connect", () => {
+            console.log(connected)
+        })
         socket.on("connect_error", (err) => {
   // the reason of the error, for example "xhr poll error"
   console.log(err.message);
