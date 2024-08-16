@@ -11,13 +11,16 @@ import { w3cwebsocket as W3CWebSocket} from "websocket";
 import { updateBookingStatusToReserved} from "../../firebase";
 import io from "socket.io-client"
 import { useParams } from 'react-router-dom';
-import WebSocket from "ws";
 
 
 const SuccessPayingDeposit = () => {
     // const socket = io.connect('https://badassmariachi.com/'
     const socket = io.connect('https://mariachihero.com/:2096'
-        , {transports: ['websocket'],}, 
+        , {
+            transports: ['websocket'],
+            upgrade
+        }, 
+            
                              )
 
     const [url , setUrl ] = useState("")
@@ -46,10 +49,10 @@ const SuccessPayingDeposit = () => {
   // some additional context, for example the XMLHttpRequest object
   console.log(err.context);
 });
-        console.log("checkClientWSConnection")
-        client.onopen = () => {
-            console.log('Websocket CLiecnt Connected')
-        }
+        // console.log("checkClientWSConnection")
+        // client.onopen = () => {
+        //     console.log('Websocket CLiecnt Connected')
+        // }
 
         // client.onmessage = async (message) => {
         //     console.log("REceived a message@const", message.data)
