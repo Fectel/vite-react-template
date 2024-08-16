@@ -18,7 +18,7 @@ const SuccessPayingDeposit = () => {
     const socket = io.connect('https://mariachihero.com/:2096'
         , {
             transports: ['websocket'],
-            upgrade
+            upgrade: true,
         }, 
             
                              )
