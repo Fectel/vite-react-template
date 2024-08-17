@@ -16,18 +16,19 @@ import { useParams } from 'react-router-dom';
 const SuccessPayingDeposit = () => {
     // const socket = io.connect('https://badassmariachi.com/'
     // const socket = io.connect('https://mariachihero.com/:2096'
-    //     , {
-    //         transports: ['websocket'],
-    //     }, 
+    const socket = io.connect('https://complicated-josefina-hectors-projects-e67a205d.koyeb.app/'
+        , {
+            transports: ['websocket'],
+        }, 
             
-    //                          )
+                             )
 
     const [url , setUrl ] = useState("")
     const [amount , setAmount ] = useState(0)
 
     const params = useParams();
 
-    const client = new WebSocket('wss://mariachihero.com/:2096');
+    // const client = new WebSocket('wss://mariachihero.com/:2096');
 
     console.log("Success page")
 
@@ -35,23 +36,23 @@ const SuccessPayingDeposit = () => {
 
     function checkClientWSConnection(){
 
-        // socket.on("connect", () => {
-        //     console.log(connected)
-        // })
-        // socket.on("connect_error", (err) => {
-  // the reason of the error, for example "xhr poll error"
-//   console.log(err.message);
+        socket.on("connect", () => {
+            console.log(connected)
+        })
+        socket.on("connect_error", (err) => {
+  the reason of the error, for example "xhr poll error"
+  console.log(err.message);
 
-  // some additional description, for example the status code of the initial HTTP response
-//   console.log(err.description);
+  some additional description, for example the status code of the initial HTTP response
+  console.log(err.description);
 
-  // some additional context, for example the XMLHttpRequest object
-//   console.log(err.context);
-// });
+  some additional context, for example the XMLHttpRequest object
+  console.log(err.context);
+});
         // console.log("checkClientWSConnection")
-        client.onopen = () => {
-            console.log('Websocket CLiecnt Connected')
-        }
+        // client.onopen = () => {
+        //     console.log('Websocket CLiecnt Connected')
+        // }
 
         // client.onmessage = async (message) => {
         //     console.log("REceived a message@const", message.data)
