@@ -27,7 +27,7 @@ const SuccessPayingDeposit = () => {
 
     const params = useParams();
 
-    const client = new WebSocket('wss://mariachihero.com/');
+    const client = new WebSocket('wss://mariachihero.com/:2096');
 
     console.log("Success page")
 
