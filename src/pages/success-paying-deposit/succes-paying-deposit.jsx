@@ -40,14 +40,11 @@ const SuccessPayingDeposit = () => {
             console.log(connected)
         })
         socket.on("connect_error", (err) => {
-            the reason of the error, for example "xhr poll error"
-            console.log(err.message);
+            console.log(err.message, "message");
 
-            some additional description, for example the status code of the initial HTTP response
-            console.log(err.description);
+            console.log(err.description, "description");
 
-            some additional context, for example the XMLHttpRequest object
-            console.log(err.context);
+            console.log(err.context, "context");
         })
         // console.log("checkClientWSConnection")
         // client.onopen = () => {
