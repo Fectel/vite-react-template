@@ -37,7 +37,7 @@ const SuccessPayingDeposit = () => {
     function checkClientWSConnection(){
 
         socket.on("connect", () => {
-            console.log(connected)
+            console.log("connected")
         })
         socket.on("connect_error", (err) => {
             console.log(err.message, "message");
