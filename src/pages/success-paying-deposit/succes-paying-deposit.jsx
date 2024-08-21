@@ -46,6 +46,10 @@ const SuccessPayingDeposit = () => {
 
             console.log(err.context, "context");
         })
+
+        socket.on("message", (message) => {
+            console.log(message)
+        } )
         // console.log("checkClientWSConnection")
         // client.onopen = () => {
         //     console.log('Websocket CLiecnt Connected')
