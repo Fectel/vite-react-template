@@ -14,9 +14,7 @@ import { useParams } from 'react-router-dom';
 
 
 const SuccessPayingDeposit = () => {
-    // const socket = io.connect('https://badassmariachi.com'
     const socket = io.connect('https://mariachihero.com'
-    // const socket = io.connect('https://complicated-josefina-hectors-projects-e67a205d.koyeb.app/'
         , {
             transports: ['websocket'],
         }, 
@@ -28,26 +26,34 @@ const SuccessPayingDeposit = () => {
 
     const params = useParams();
 
-    // const client = new WebSocket('wss://mariachihero.com/:2096');
 
     console.log("Success page")
 
     socket.on("message", (message) => {
         console.log(message)
     } )
+    socket.on("invoice_pdf", (message) => {
+        console.log(message, "INVOICE_PDF")
+    } )
+    socket.on("invoice_number", (message) => {
+        console.log(message, "INVOICE_NUMBER")
+    } )
+    socket.on("transactionAmountInCents", (message) => {
+        console.log(message, "TRANSACTIONAMOUNTINCENTS")
+    } )
+    socket.on("connect", () => {
+        console.log("connected")
+    })
+    socket.on("connect_error", (err) => {
+        console.log(err.message, "message");
 
-    function checkClientWSConnection(){
+        console.log(err.description, "description");
 
-        socket.on("connect", () => {
-            console.log("connected")
-        })
-        socket.on("connect_error", (err) => {
-            console.log(err.message, "message");
+        console.log(err.context, "context");
+    })
+    // function checkClientWSConnection(){
 
-            console.log(err.description, "description");
-
-            console.log(err.context, "context");
-        })
+      
 
       
         // console.log("checkClientWSConnection")
@@ -87,10 +93,10 @@ const SuccessPayingDeposit = () => {
         // }
         // console.log("checkClientWSConnection", client)
 
-    }
+    // }
 
     useEffect(() => {
-        checkClientWSConnection()
+        // checkClientWSConnection()
         console.log("PArams",params)
 
     },[])
