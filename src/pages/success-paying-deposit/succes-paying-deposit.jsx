@@ -32,7 +32,9 @@ const SuccessPayingDeposit = () => {
 
     console.log("Success page")
 
-    
+    socket.on("message", (message) => {
+        console.log(message)
+    } )
 
     function checkClientWSConnection(){
 
@@ -47,9 +49,7 @@ const SuccessPayingDeposit = () => {
             console.log(err.context, "context");
         })
 
-        socket.on("message", (message) => {
-            console.log(message)
-        } )
+      
         // console.log("checkClientWSConnection")
         // client.onopen = () => {
         //     console.log('Websocket CLiecnt Connected')
