@@ -29,32 +29,39 @@ const SuccessPayingDeposit = () => {
 
     console.log("Success page")
 
-    socket.on("message", (message) => {
-        console.log(message)
-    } )
-    socket.on("invoice_pdf", (message) => {
-        console.log(message, "INVOICE_PDF")
-    } )
-    socket.on("invoice_number", (message) => {
-        console.log(message, "INVOICE_NUMBER")
-    } )
-    socket.on("transactionAmountInCents", (message) => {
-        console.log(message, "TRANSACTIONAMOUNTINCENTS")
-    } )
-    socket.on("connect", () => {
-        console.log("connected")
-    })
-    socket.on("connect_error", (err) => {
-        console.log(err.message, "message");
-
-        console.log(err.description, "description");
-
-        console.log(err.context, "context");
-    })
-    // function checkClientWSConnection(){
+   
+    function checkClientWSConnection(){
 
       
-
+        socket.on("message", (message) => {
+            console.log(message)
+        } )
+        socket.on("invoice_pdf", async (message) => {
+            console.log(message, "INVOICE_PDF")
+            console.log("Params clientId: ", paprams.clientId, ", Params contractId: ", params.contractId)
+            // await updateBookingStatusToReserved(params.clientId,params.contractId, message).then(r =>
+            //     {
+            //         //also add the link to download the pdf
+            //         // and include tha link in the client dashboard bookings component
+            //         window.location.href = '/client-dashboard'
+            //     })
+        } )
+        socket.on("invoice_number", (message) => {
+            console.log(message, "INVOICE_NUMBER")
+        } )
+        socket.on("transactionAmountInCents", (message) => {
+            console.log(message, "TRANSACTIONAMOUNTINCENTS")
+        } )
+        socket.on("connect", () => {
+            console.log("connected")
+        })
+        socket.on("connect_error", (err) => {
+            console.log(err.message, "message");
+    
+            console.log(err.description, "description");
+    
+            console.log(err.context, "context");
+        })
       
         // console.log("checkClientWSConnection")
         // client.onopen = () => {
@@ -73,12 +80,12 @@ const SuccessPayingDeposit = () => {
         //     setAmount(msgArr[1]/100)
         //     console.log(params)
 
-        //     await updateBookingStatusToReserved(params.clientId,params.contractId, msgArr[0], msgArr[4]).then(r =>
-        //     {
-        //         //also add the link to download the pdf
-        //         // and include tha link in the client dashboard bookings component
-        //         window.location.href = '/client-dashboard'
-        //     })
+            // await updateBookingStatusToReserved(params.clientId,params.contractId, msgArr[0], msgArr[4]).then(r =>
+            // {
+            //     //also add the link to download the pdf
+            //     // and include tha link in the client dashboard bookings component
+            //     window.location.href = '/client-dashboard'
+            // })
         //     // await saveNewMembership(msgArr[1], msgArr[0], msgArr[2], msgArr[3])
 
         //     // await saveNewMembershipSubscriptionTransaction(msgArr[1], msgArr[4],msgArr[5]).then((res) => {
@@ -93,10 +100,10 @@ const SuccessPayingDeposit = () => {
         // }
         // console.log("checkClientWSConnection", client)
 
-    // }
+    }
 
     useEffect(() => {
-        // checkClientWSConnection()
+        checkClientWSConnection()
         console.log("PArams",params)
 
     },[])
