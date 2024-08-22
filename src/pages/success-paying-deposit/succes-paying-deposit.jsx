@@ -39,7 +39,7 @@ const SuccessPayingDeposit = () => {
         socket.on("message", (message) => {
             console.log(message)
         } )
-        socket.on("invoice_pdf", async (message) => {
+        socket.on("invoice_pdf",  (message) => {
             console.log(message, "INVOICE_PDF")
             console.log("Params clientId: ", params.clientId, ", Params contractId: ", params.contractId)
             depositInvoiceUrl = message;
@@ -62,7 +62,7 @@ const SuccessPayingDeposit = () => {
         socket.on("contractSignatureUrl", (message) => {
             console.log(message, "CONTRACT-SIGNATURE-URL")
         } )
-        socket.on("contractImgUrl", (message) => {
+        socket.on("contractImgUrl", async (message) => {
             console.log(message, "CONTRACT-IMG-URL")
              await updateBookingStatusToReserved(params.clientId,params.contractId, depositInvoiceUrl, message).then(r =>
                 {
