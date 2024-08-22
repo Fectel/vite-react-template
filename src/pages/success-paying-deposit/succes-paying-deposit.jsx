@@ -26,6 +26,9 @@ const SuccessPayingDeposit = () => {
 
     const params = useParams();
 
+    let depositInvoiceUrl;
+    let contractImgUrl;
+    let contractSignatureUrl;
 
     console.log("Success page")
 
@@ -38,14 +41,18 @@ const SuccessPayingDeposit = () => {
         } )
         socket.on("invoice_pdf", async (message) => {
             console.log(message, "INVOICE_PDF")
-            console.log("Params clientId: ", paprams.clientId, ", Params contractId: ", params.contractId)
-            // await updateBookingStatusToReserved(params.clientId,params.contractId, message).then(r =>
-            //     {
-            //         //also add the link to download the pdf
-            //         // and include tha link in the client dashboard bookings component
-            //         window.location.href = '/client-dashboard'
-            //     })
+            console.log("Params clientId: ", params.clientId, ", Params contractId: ", params.contractId)
+            depositInvoiceUrl = message;
+            
         } )
+        socket.on("contractSignatureUrl", (message) => {
+          console.log(message, "contractSignatureUrl")
+            contractSignatureUrl = message;
+        }
+       socket.on("contractImgUrl", (message) => {
+            console.log(message, "contractImgUrl")
+            contractImgUrl = message;
+        }
         socket.on("invoice_number", (message) => {
             console.log(message, "INVOICE_NUMBER")
         } )
@@ -57,6 +64,12 @@ const SuccessPayingDeposit = () => {
         } )
         socket.on("contractImgUrl", (message) => {
             console.log(message, "CONTRACT-IMG-URL")
+             await updateBookingStatusToReserved(params.clientId,params.contractId, depositInvoiceUrl, message).then(r =>
+                {
+                    //also add the link to download the pdf
+                    // and include tha link in the client dashboard bookings component
+                    window.location.href = '/client-dashboard'
+                })
         } )
         socket.on("connect", () => {
             console.log("connected")
