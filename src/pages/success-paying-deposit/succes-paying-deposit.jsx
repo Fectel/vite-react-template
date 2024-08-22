@@ -48,11 +48,11 @@ const SuccessPayingDeposit = () => {
         socket.on("contractSignatureUrl", (message) => {
           console.log(message, "contractSignatureUrl")
             contractSignatureUrl = message;
-        }
+        })
        socket.on("contractImgUrl", (message) => {
             console.log(message, "contractImgUrl")
             contractImgUrl = message;
-        }
+        })
         socket.on("invoice_number", (message) => {
             console.log(message, "INVOICE_NUMBER")
         } )
