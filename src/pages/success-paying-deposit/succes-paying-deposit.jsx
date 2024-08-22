@@ -52,6 +52,12 @@ const SuccessPayingDeposit = () => {
         socket.on("transactionAmountInCents", (message) => {
             console.log(message, "TRANSACTIONAMOUNTINCENTS")
         } )
+        socket.on("contractSignatureUrl", (message) => {
+            console.log(message, "CONTRACT-SIGNATURE-URL")
+        } )
+        socket.on("contractImgUrl", (message) => {
+            console.log(message, "CONTRACT-IMG-URL")
+        } )
         socket.on("connect", () => {
             console.log("connected")
         })
