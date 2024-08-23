@@ -333,7 +333,7 @@ const ClientDashboard = () => {
             </IonContent>
 
 
-            <IonButton  color="tertiary" style={{width:"50%", margin:"1em auto", height:"5em"}} onClick={() => onClickLogout()}>
+            <IonButton  color="tertiary" style={{width:"50%", margin:".2em auto", height:"2em"}} onClick={() => onClickLogout()}>
                 Logout
             </IonButton>
 
