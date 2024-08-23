@@ -1,6 +1,6 @@
 .header-container{
 
-  height: 26em;
+  height: 24em;
 }
 
 
@@ -43,7 +43,7 @@ img{
 }
 .header-without-img-container{
 
-  height: 11em;
+  height: 10em;
 }
 @media (max-width: 700px) {
   .header-container{
@@ -70,14 +70,15 @@ img{
     background-size: contain;
   }
   .header-without-img-container{
+    background-color: #FFD454;
 
-    height: 9em;
+    height: 7em;
   }
 
 }@media (max-width: 400px) {
   .header-container{
 
-    height: 17em;
+    height: 15em;
   }
   .header-title-text-1{
     font-size: 1.5rem;
@@ -98,8 +99,9 @@ img{
     background-size: contain;
   }
   .header-without-img-container{
+    background-color: #FFD454;
 
-    height: 8em;
+    height: 6em;
   }
 
 }
@@ -123,12 +125,13 @@ img{
     height: fit-content;
     width: 15em;
     margin-top: .1em;
-    //background-color: #FFD454;
+    // background-color: #FFD454;
     background-size: contain;
   }
   .header-without-img-container{
+    background-color: #FFD454;
 
-    height: 6em;
+    height: 5em;
   }
 
 }
