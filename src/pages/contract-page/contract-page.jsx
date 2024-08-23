@@ -626,7 +626,7 @@ const ContractPage = () => {
                                                     </div>
 
                                                     <br></br>
-                                                    {contract.status !== "Reserved" || contract.status !== "Ready For Performance!"&& (
+                                                    {contract.status !== "Reserved" && contract.status !== "Ready For Performance!"&& (
                                                         <button style={{height:"30px",width:"60px"}} onClick={handleClear}>Clear</button>
 
                                                     )}
@@ -650,7 +650,7 @@ const ContractPage = () => {
                                                     }}
                                                           src={contract.contractSignatureUrl} />
 
-                                                    {contract.status !== "Reserved" || contract.status !== "Ready For Performance!"&& (
+                                                    {contract.status !== "Reserved" && contract.status !== "Ready For Performance!"&& (
                                                         <button style={{height:"30px",width:"60px"}} onClick={handleClear}>Clear</button>
 
                                                         )}
