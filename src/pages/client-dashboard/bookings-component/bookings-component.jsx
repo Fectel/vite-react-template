@@ -7,7 +7,8 @@ import {
     IonGrid,
     IonIcon,
     IonList,
-    IonRow
+    IonRow,
+    IonLabel
 } from "@ionic/react";
 import emailjs from 'emailjs-com';
 import {adminDeleteClientBookingRequestDocument, updateBookingStatusToContractReady} from "../../../firebase";
