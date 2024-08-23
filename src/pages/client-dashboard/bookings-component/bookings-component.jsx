@@ -511,7 +511,7 @@ const BookingsComponent = ({performanceDate,booking,
                                           marginBottom:".2em",
                                       }}
                                       icon={downloadOutline}/>
-                                  Deposit Invoice
+                                  Downlaod Deposit Invoice
                                   <IonIcon style={{marginLeft: ".5em"}} icon={pricetagsOutline}/>
 
                               </IonButton>
