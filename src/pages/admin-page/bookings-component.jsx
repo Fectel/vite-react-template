@@ -379,7 +379,7 @@ export default function BookingsComponent({booking, setRefresh}){
 
 
             ):(
-                <div >
+                <div style={{padding: "5em"}} >
 
                                 <IonCard style={{
                                     // display: "flex",
