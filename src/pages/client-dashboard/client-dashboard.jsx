@@ -181,7 +181,7 @@ const ClientDashboard = () => {
                                             (
 
                                                 <div 
-                                                    style={{width:"90%"}}
+                                                    style={{width:"90%", margin:"auto"}}
                                                     >
                                                     {bookingRequestsArray.map((booking,i ) => (
 
