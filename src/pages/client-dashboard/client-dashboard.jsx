@@ -173,7 +173,7 @@ const ClientDashboard = () => {
                             {/*</IonItem>*/}
 
                             {currentBookingsBool === true ? (
-                                <div style={{display: "flex", flexDirection: "column"}} lines="none">
+                                <div style={{display: "flex", flexDirection: "column", margin: "1em"}} lines="none">
                                     <div style={{margin: "2em auto", fontSize:"1.2em", textAlign:'center'}}>
                                         {Object.values(bookingRequestsArray).length < 1 ? (
                                                 <div>No  Bookings Or Confirming Booking Availability</div>
