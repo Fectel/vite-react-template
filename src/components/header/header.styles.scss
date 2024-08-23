@@ -42,8 +42,9 @@ img{
   width: 100%;
 }
 .header-without-img-container{
+   background-color: #490411;
 
-  height: 10em;
+  height: 9em;
 }
 @media (max-width: 700px) {
   .header-container{
@@ -70,7 +71,7 @@ img{
     background-size: contain;
   }
   .header-without-img-container{
-    background-color: #FFD454;
+  background-color: #490411;
 
     height: 7em;
   }
@@ -99,7 +100,7 @@ img{
     background-size: contain;
   }
   .header-without-img-container{
-    background-color: #FFD454;
+  background-color: #490411;
 
     height: 6em;
   }
@@ -129,9 +130,9 @@ img{
     background-size: contain;
   }
   .header-without-img-container{
-    background-color: #FFD454;
+  background-color: #490411;
 
-    height: 5em;
+    height: 7em;
   }
 
 }
