@@ -180,7 +180,9 @@ const ClientDashboard = () => {
                                             ):
                                             (
 
-                                                <div>
+                                                <div 
+                                                    style={{width:"90%"}}
+                                                    >
                                                     {bookingRequestsArray.map((booking,i ) => (
 
                                                             <BookingsComponent
