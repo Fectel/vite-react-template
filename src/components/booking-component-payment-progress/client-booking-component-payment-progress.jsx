@@ -12,7 +12,7 @@ export default function ClientBookingComponentPaymentProgress({remainingBalance,
         axios({
             url: 'pay-mariachi-remaining-balance',
             // url: 'create-pay-deposit-session',
-            baseURL: "https://triumphant-beauty-production.up.railway.app",
+            baseURL: "https://mariachihero.com",
 
             method: 'post',
             params:
