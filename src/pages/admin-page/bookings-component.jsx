@@ -476,7 +476,7 @@ export default function BookingsComponent({booking, setRefresh}){
                                                 }}>
                                                     <IonButton style={{fontSize: ".6rem",
                                                     }} color="primary"s
-                                                               onClick={() => {navigator.clipboard.writeText(`http://localhost:3000/contract-page/${booking.docId}`)}}
+                                                               onClick={() => {navigator.clipboard.writeText(`http://mariachichingon.com/contract-page/${booking.docId}`)}}
 
                                                     >
                                                         Copy Link To Contract
