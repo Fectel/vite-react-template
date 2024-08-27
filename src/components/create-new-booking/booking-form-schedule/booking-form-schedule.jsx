@@ -221,25 +221,25 @@ const BookingFormSchedule = ({selectedStartTime,numberOfMariachis, setNumberOfMa
                 fee = 40;
 
             }else if (distance > 45 && distance < 53 ){
-                fee = 60;
-
-            }else if (distance > 53 && distance < 75 ){
                 fee = 80;
 
-            }else if (distance > 75 && distance < 80 ){
-                fee = 100;
-
-            }else if (distance > 80 && distance < 90 ){
+            }else if (distance > 53 && distance < 75 ){
                 fee = 120;
 
-            }else if (distance > 90 && distance < 110 ){
+            }else if (distance > 75 && distance < 80 ){
                 fee = 140;
 
-            }else if (distance > 110 && distance < 130 ){
+            }else if (distance > 80 && distance < 90 ){
                 fee = 160;
 
-            }else if (distance > 130 && distance < 150 ){
+            }else if (distance > 90 && distance < 110 ){
+                fee = 180;
+
+            }else if (distance > 110 && distance < 130 ){
                 fee = 200;
+
+            }else if (distance > 130 && distance < 150 ){
+                fee = 210;
 
             }else if (distance > 150 && distance < 165 ){
                 fee = 220;
@@ -247,17 +247,16 @@ const BookingFormSchedule = ({selectedStartTime,numberOfMariachis, setNumberOfMa
             }else if (distance > 165 && distance < 180 ){
 
                 fee = 240;
-                console.log("$240")
 
             }
             else if (distance > 180 && distance < 190 ){
-                fee = 280;
+                fee = 260;
 
             }else if (distance > 190 && distance < 220 ){
-                fee = 300;
+                fee = 280;
 
             }else if (distance > 220 && distance < 230 ){
-                fee = 340;
+                fee = 300;
 
             }
 
