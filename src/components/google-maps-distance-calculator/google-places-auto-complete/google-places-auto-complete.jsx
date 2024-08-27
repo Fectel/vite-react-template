@@ -106,42 +106,42 @@ setAddressTravelTime, setAddressDistance,
             fee = 40;
 
         }else if (distNum > 45 && distNum < 53 ){
-            fee = 60;
-
-        }else if (distNum > 53 && distNum < 75 ){
             fee = 80;
 
-        }else if (distNum > 75 && distNum < 80 ){
+        }else if (distNum > 53 && distNum < 75 ){
             fee = 100;
 
-        }else if (distNum > 80 && distNum < 90 ){
-            fee = 120;
-
-        }else if (distNum > 90 && distNum < 110 ){
+        }else if (distNum > 75 && distNum < 80 ){
             fee = 140;
 
-        }else if (distNum > 110 && distNum < 130 ){
+        }else if (distNum > 80 && distNum < 90 ){
             fee = 160;
 
-        }else if (distNum > 130 && distNum < 150 ){
+        }else if (distNum > 90 && distNum < 110 ){
+            fee = 180;
+
+        }else if (distNum > 110 && distNum < 130 ){
             fee = 200;
 
+        }else if (distNum > 130 && distNum < 150 ){
+            fee = 240;
+
         }else if (distNum > 150 && distNum < 165 ){
-            fee = 220;
+            fee = 280;
 
         }else if (distNum > 165 && distNum < 180 ){
 
-            fee = 240;
+            fee = 300;
 
         }
         else if (distNum > 180 && distNum < 190 ){
-            fee = 280;
+            fee = 340;
 
         }else if (distNum > 190 && distNum < 220 ){
-            fee = 300;
+            fee = 360;
 
         }else if (distNum > 220 && distNum < 230 ){
-            fee = 340;
+            fee = 400;
 
         }
 
