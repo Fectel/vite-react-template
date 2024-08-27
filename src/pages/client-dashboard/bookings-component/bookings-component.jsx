@@ -422,7 +422,7 @@ const BookingsComponent = ({performanceDate,booking,
                                           }}
                                           icon={downloadOutline}/>
 
-                                      Donwload Remaining Balance Invoice
+                                      Download Remaining Balance Invoice
                                       <IonIcon style={{marginLeft: ".5em"}} icon={pricetagsOutline}/>
 
                                   </IonButton>
