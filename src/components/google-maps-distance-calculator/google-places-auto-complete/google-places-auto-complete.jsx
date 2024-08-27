@@ -109,7 +109,7 @@ setAddressTravelTime, setAddressDistance,
             fee = 80;
 
         }else if (distNum > 53 && distNum < 75 ){
-            fee = 100;
+            fee = 120;
 
         }else if (distNum > 75 && distNum < 80 ){
             fee = 140;
