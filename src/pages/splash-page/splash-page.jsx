@@ -46,7 +46,7 @@ export default function SplashPage(){
                                     href="tel:+14804207629"
                         >
                             <div style={{marginRight:"1em"}}>
-                                Quick & Easy
+                                Easy Online
                                 Bookings
 
                             </div>
