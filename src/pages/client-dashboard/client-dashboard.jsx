@@ -252,7 +252,7 @@ const ClientDashboard = () => {
                                             ):
                                             (
 
-                                                <div style={{display: "flex", flexWrap: "wrap", flexDirection: "row"}}>
+                                                <div style={{display: "flex", flexDirection: "column"}}>
                                                     {pastBookingRequestsArray.map(booking => (
                                                         <>
                                                             <BookingsComponent
