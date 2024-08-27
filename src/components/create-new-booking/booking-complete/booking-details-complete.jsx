@@ -6,7 +6,7 @@ import { newspaperOutline} from "ionicons/icons";
 export default function BookingDetailsComplete(){
 
     function onContinueButtonClick(){
-        window.location.href = '/client-dashboard';
+        window.location.href = '/admin-dashboard';
 
     }
     return (
