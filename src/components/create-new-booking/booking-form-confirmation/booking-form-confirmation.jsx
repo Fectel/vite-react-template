@@ -207,10 +207,17 @@ const BookingFormConfirmation = ({performanceAddress,
             performanceDate: value.toString().substring(0, 15),
             performanceAddress: performanceAddress,
             numberOfMariachis: numberOfMariachis,
-            feeTotal: feeTotal,
-            balanceDue: feeTotal - (Math.round((parseInt(feeTotal) / 2) / 50) * 50),
+            feeTotal: grandTotal ? (grandTotal):(feeTotal),
+            balanceDue: grandTotal ? (
+                grandTotal -  Math.round((grandTotal/2)/50) * 50
+            ):
+                (feeTotal - (Math.round((parseInt(feeTotal) / 2) / 50) * 50)),
             performanceTime: startAndEndTime,
-            feeDeposit: Math.round((parseInt(feeTotal) / 2) / 50) * 50,
+            feeDeposit: grandTotal ? (
+                Math.round((grandTotal/2)/50) * 50
+            ):(
+                Math.round((parseInt(feeTotal) / 2) / 50) * 50
+            ),
             mariachiPackageId: mariachiPackageId === undefined ? (0) : (mariachiPackageId),
             status: "Confirming Availability",
             bookingDate: value,
