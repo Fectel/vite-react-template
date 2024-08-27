@@ -110,7 +110,7 @@ const BookingsComponent = ({performanceDate,booking,
 
 
     return (
-        <IonCard  style={{width:"100%", margin: "1em auto",
+        <IonCard  style={{width:"100%",  maxWidth: "6em",margin: "1em auto",
             paddingTop:"1em",
         }}>
 
