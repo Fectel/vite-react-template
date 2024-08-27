@@ -149,17 +149,18 @@ export default function ClientBookingComponentPaymentProgress({remainingBalance,
                     }}>
                         <div>✅</div>
                         <div> 📑 Contract signed and reservation fee payed!</div>
-                        <IonButton
+                        
+                    </div>
+                    <IonButton
 
                             onClick={() => onCLickViewBooking()}
-                            fill="outline"  style={{fontSize: ".9rem", marginTop: "1em"}} color="secondary">
+                            fill="outline"  style={{fontSize: ".7rem", marginTop: "1em"}} color="secondary">
                             <IonIcon style={{marginRight: ".5em"}} icon={newspaperOutline}/>
 
                             <div>
                                 View Contract
                             </div>
                         </IonButton>
-                    </div>
 
 
                     <div style={{display: "flex",
