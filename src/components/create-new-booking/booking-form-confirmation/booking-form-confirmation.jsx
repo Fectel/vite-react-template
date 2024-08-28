@@ -232,7 +232,7 @@ const BookingFormConfirmation = ({performanceAddress,
 
         console.log(res)
         if (res === true) {
-            setCurrentBookingStep(5)
+            // setCurrentBookingStep(5)
             // window.location.href = '/admin-dashboard';
         }
 
