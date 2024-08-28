@@ -221,19 +221,18 @@ const BookingFormConfirmation = ({performanceAddress,
             mariachiPackageId: mariachiPackageId === undefined ? (0) : (mariachiPackageId),
             status: "Confirming Availability",
             bookingDate: value,
-            name: grandTotal ? (`${bookingPackageName.substring(0, bookingPackageName.length - 5)} $ ${grandTotal}`):(bookingPackageName),
+            name: grandTotal ? (`${bookingPackageName.substring(0, bookingPackageName.length - 5)} $${grandTotal}`):(bookingPackageName),
 
         }
         console.log("GRANDTOTAL", grandTotal)
-        console.log("NAME!!!!", `${bookingPackageName.substring(0, bookingPackageName.length - 5)} $ ${grandTotal}` )
+        console.log("NAME!!!!", `${bookingPackageName.substring(0, bookingPackageName.length - 5)} $${grandTotal}` )
         console.log(bookingRequest)
-        // const res = await createClientBookingRequestDocument( bookingRequest)
-        // const res = await createClientBookingRequestDocument(currentUser.uid, bookingRequest)
+        const res = await createClientBookingRequestDocument( bookingRequest)
 
-        // console.log(res)
-        // if (res === true) {
-            // setCurrentBookingStep(5)
-        // }
+        console.log(res)
+        if (res === true) {
+            setCurrentBookingStep(5)
+        }
 
 
     }
