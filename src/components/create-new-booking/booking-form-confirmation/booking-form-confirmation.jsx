@@ -388,7 +388,11 @@ const BookingFormConfirmation = ({performanceAddress,
 
                                 </div>
 
-                                <div  style={{
+                            
+
+                                {grandTotal ? (
+                                <div>
+                                      <div  style={{
                                     fontSize: ".8rem",
                                     display: "flex",
                                     justifyContent: "space-between",
@@ -398,11 +402,8 @@ const BookingFormConfirmation = ({performanceAddress,
                                     <div>
                                         Mariachi Package:
                                     </div>
-                                    <div>{bookingPackageName}</div>
+                                    <div>{bookingPackageName.substring(0, bookingPackageName.length - 5)} $ {grandTotal}</div>
                                 </div>
-
-                                {grandTotal ? (
-                                <div>
                                     <div style={{
                                         fontSize: ".8rem",
                                         display: "flex",
@@ -452,6 +453,18 @@ const BookingFormConfirmation = ({performanceAddress,
                                     </div>
                                 </div>
                                 ):(<div>
+                                      <div  style={{
+                                    fontSize: ".8rem",
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    width:"80%",
+                                    margin: "auto",
+                                }} >
+                                    <div>
+                                        Mariachi Package:
+                                    </div>
+                                    <div>{bookingPackageName}</div>
+                                </div>
                                 <div style={{
                                     fontSize: ".8rem",
                                     display: "flex",
