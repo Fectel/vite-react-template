@@ -227,14 +227,13 @@ const BookingFormConfirmation = ({performanceAddress,
         console.log("GRANDTOTAL", grandTotal)
         console.log("NAME!!!!", `${bookingPackageName.substring(0, bookingPackageName.length - 5)} $ ${grandTotal}` )
         console.log(bookingRequest)
-        const res = await createClientBookingRequestDocument( bookingRequest)
+        // const res = await createClientBookingRequestDocument( bookingRequest)
         // const res = await createClientBookingRequestDocument(currentUser.uid, bookingRequest)
 
-        console.log(res)
-        if (res === true) {
+        // console.log(res)
+        // if (res === true) {
             // setCurrentBookingStep(5)
-            // window.location.href = '/admin-dashboard';
-        }
+        // }
 
 
     }
