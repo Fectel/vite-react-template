@@ -46,7 +46,9 @@ export default function ClientBookingComponentPaymentProgress({remainingBalance,
 
         }}>
             {contract.status === "Contract is Ready" && (
-                <div style={{display: "flex",
+                <div>
+                    
+                     <div style={{display: "flex",
                     flexDirection: "row",
                     // backgroundColor: "blue",
                     border: "solid thin",
@@ -55,7 +57,11 @@ export default function ClientBookingComponentPaymentProgress({remainingBalance,
                 }}>
                     <input disabled={true} style={{marginRight: ".5em"}}type={"checkbox"}></input>
                     <div> 📑 Contract signed and reservation fee payed!</div>
-                    <IonButton
+                   
+
+                </div>
+
+                     <IonButton
 
                         onClick={() => onCLickViewBooking()}
                         fill="outline"  style={{fontSize: ".9rem", marginTop: "1em"}} color="secondary">
@@ -65,8 +71,8 @@ export default function ClientBookingComponentPaymentProgress({remainingBalance,
                             View Contract
                         </div>
                     </IonButton>
-
                 </div>
+               
             )}
             {contract.status === "Reserved" && (
                 <div>

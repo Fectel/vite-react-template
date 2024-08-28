@@ -65,7 +65,7 @@ const BookingsComponent = ({performanceDate,booking,
             'template_0258ppo',
             {name: clientName,
                 bookingDate: performanceDate,
-                url: `http://localhost:8101/contract-page/${docId}`,
+                url: `http://mariachichingon.com/contract-page/${docId}`,
                 email: clientEmail, subject: "Your booking is ready!"},
             '81Ta3k98ORyxKyQ1E',
             )
