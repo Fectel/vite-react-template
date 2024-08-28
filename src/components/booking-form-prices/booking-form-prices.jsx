@@ -31,8 +31,13 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
     const [showTwoHoursAt4, setShowTwoHoursAt4 ] = useState(true)
 
     currentDate.setHours(0)
+                        
+    //editing this to be 3,(4) weeks
+    // twoWeeksDate.setHours(353)
+    // twoWeeksDate.setHours(530)
+        twoWeeksDate.setHours(706)
 
-    twoWeeksDate.setHours(353)
+
 
     console.log(currentDate, "-" , twoWeeksDate)
 
