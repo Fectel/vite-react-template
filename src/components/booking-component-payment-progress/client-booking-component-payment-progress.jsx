@@ -79,7 +79,9 @@ export default function ClientBookingComponentPaymentProgress({remainingBalance,
                     }}>
                         <div>✅</div>
                         <div> 📑 Contract signed and reservation fee payed!</div>
-                        <div style={{display:"flex", justifyContent:"space-evenly"}}>
+                       
+                    </div>
+                    <div style={{display:"flex", justifyContent:"space-evenly"}}>
                             <div>
 
                                 <IonButton
@@ -95,7 +97,6 @@ export default function ClientBookingComponentPaymentProgress({remainingBalance,
                             </div>
 
                         </div>
-                    </div>
 
                     <div  style={{display: "flex",
                         flexDirection: "row",
@@ -107,7 +108,9 @@ export default function ClientBookingComponentPaymentProgress({remainingBalance,
                     }}>
                         <input  disabled={true} style={{marginRight: ".5em"}}type={"checkbox"}></input>
                         <div style={{color:"white", marginTop:".8em"}}>💵 Remaining balance ${remainingBalance} due before performance.</div>
-                        <IonButton
+                               
+                    </div>
+                    <IonButton
                             onClick={() => onPayRemainingBalanceClick()}
                             // fill="outline"
                             expand="block" style={{fontSize: ".9rem", marginTop: "1em auto", marginLeft:"1em"}}
@@ -118,23 +121,6 @@ export default function ClientBookingComponentPaymentProgress({remainingBalance,
                                 ${remainingBalance}
                             </div>
                         </IonButton>
-                        {/*    <div>*/}
-                        {/*        <IonButton*/}
-                        {/*            onClick={() => onPayRemainingBalanceClick()}*/}
-                        {/*            // fill="outline"*/}
-                        {/*            expand="block"*/}
-                        {/*            style={{fontSize: ".8rem", marginTop: "1em auto", marginLeft:"0em"}}*/}
-                        {/*            color="secondary">*/}
-                        {/*            <IonIcon style={{marginRight: ".5em"}} icon={cardOutline}/>*/}
-
-                        {/*            <div>*/}
-                        {/*                Pay Remaining Balance<br/> ${remainingBalance}*/}
-                        {/*            </div>*/}
-                        {/*        </IonButton>*/}
-
-                        {/*    </div>*/}
-
-                    </div>
                 </div>
             )}
 

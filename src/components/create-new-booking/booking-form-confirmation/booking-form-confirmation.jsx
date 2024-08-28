@@ -221,7 +221,7 @@ const BookingFormConfirmation = ({performanceAddress,
             mariachiPackageId: mariachiPackageId === undefined ? (0) : (mariachiPackageId),
             status: "Confirming Availability",
             bookingDate: value,
-            name: bookingPackageName,
+            name: grandTotal ? (`${bookingPackageName.substring(0, bookingPackageName.length - 5)} + ${grandTotal}`):(bookingPackageName),
 
         }
         console.log(bookingRequest)
