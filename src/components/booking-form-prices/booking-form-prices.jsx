@@ -1203,7 +1203,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                                 <div>2 Hr Booking Min.</div>
                                             </div>
                                         )}
-                                        {/* 0 $80 & 200 $70 */}
+                                        {/* 0 $0 & 150 $70 */}
                                         {selectedStartTimeMaxPossibleHours > 1 && dateWithinTwoWeeks ? (
                                             <BookingFormPricesComponent
                                                 feePrice={1700}
@@ -1218,9 +1218,9 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                                 displayPrice="2 Hrs $1700"
                                                 setSelectedNumberOfHours={setSelectedNumberOfHours}
                                                 numberOfHours={2}
-                                                discountedPriceDisplay="2 Hrs $1550"
+                                                discountedPriceDisplay="2 Hrs $1600"
                                                 discounted={true}
-                                                discountedFeePrice={1550}
+                                                discountedFeePrice={1600}
                                                  // discountedMariachiPackageId={13}
 
                                             />
