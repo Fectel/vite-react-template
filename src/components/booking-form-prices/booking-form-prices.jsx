@@ -834,7 +834,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                                     displayPrice="2 Hrs $1400"
                                                     discountedPriceDisplay="2hrs $1200"
                                                     discounted={dateWithinTwoWeeks}
-                                                    discountedFeePrice={1275}
+                                                    discountedFeePrice={1225}
                                                     discountedMariachiPackageId={19}
                                                     setSelectedNumberOfHours={setSelectedNumberOfHours}
                                                     numberOfHours={2}/>
@@ -916,8 +916,8 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                             </div>
                                         )}
 
-                                       {/* $180 @70*/}
-                                       {/* $20 @80*/}
+                                       {/* $250 @70*/}
+                                       {/* $70 @80*/}
                                         {selectedStartTimeMaxPossibleHours > 1 &&  dateWithinTwoWeeks ? (
                                             <BookingFormPricesComponent
                                                 feePrice={1500}
@@ -930,9 +930,9 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                                 setMariachiPackageId={setMariachiPackageId}
                                                 selectedPrice={selectedPrice}
                                                 displayPrice="2 Hrs $1500"
-                                                discountedPriceDisplay="2 Hrs $1300"
+                                                discountedPriceDisplay="2 Hrs $1350"
                                                 discounted={dateWithinTwoWeeks}
-                                                discountedFeePrice={1300}
+                                                discountedFeePrice={1350}
                                                 setSelectedNumberOfHours={setSelectedNumberOfHours}
                                                 numberOfHours={2}
                                                  discountedMariachiPackageId={16}
