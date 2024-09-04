@@ -32,11 +32,11 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
 
     currentDate.setHours(0)
                         
-    //editing this to be 2,3,4  (8)weeks
+    //editing this to be 2,3,4  (12)weeks
     // twoWeeksDate.setHours(353)
     // twoWeeksDate.setHours(530)
         // twoWeeksDate.setHours(706)
-        twoWeeksDate.setHours(1412)
+        twoWeeksDate.setHours(2118)
 
 
 
