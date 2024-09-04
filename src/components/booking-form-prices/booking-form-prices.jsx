@@ -593,7 +593,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                             {/*$175 @60*/}
                                             {/*$125 @ 70*/}
                                             {/*$75 @ 80*/}
-                                            {!twoHoursOnly && distNum < 50 ?(
+                                            {!twoHoursOnly && distNum < 50 ? (
                                                 <BookingFormPricesComponent
                                                     feePrice={550}
                                                     setFeeTotal={setFeeTotal}
@@ -708,9 +708,6 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                                 numberOfHours={3}
 
                                             />
-                                            )(
-                                               
-
                                             )}
 
 
@@ -1380,8 +1377,8 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
 
                                         ): (
                                             
-                                        // $250 @ $70 
-                                        // @$80 $50
+                                            // $250 @ $70 
+                                            // @$80 $50
                                             <div>
                                                 {selectedStartTimeMaxPossibleHours > 1 &&(
                                                     <BookingFormPricesComponent
