@@ -584,7 +584,6 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
 
                                     )}
 
-                                    {!friSatEvening && !friSatNight && timeOfDayChoice !== "Night" &&(
                                         <IonCol  className="mariachi-price-package-container"  >
                                             <IonRow className="mariachi-number-title">
                                                 5 Mariachis
@@ -673,8 +672,6 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
 
 
                                         </IonCol>
-
-                                    )}
 
                                         <IonCol   className="mariachi-price-package-container"
                                                   style={{
