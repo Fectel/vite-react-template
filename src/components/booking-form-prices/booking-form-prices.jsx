@@ -32,11 +32,11 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
 
     currentDate.setHours(0)
                         
-    //editing this to be 2,3,4  (6)weeks
+    //editing this to be 2,3,4  (8)weeks
     // twoWeeksDate.setHours(353)
     // twoWeeksDate.setHours(530)
         // twoWeeksDate.setHours(706)
-        twoWeeksDate.setHours(1060)
+        twoWeeksDate.setHours(1412)
 
 
 
@@ -593,7 +593,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                             {/*$175 @60*/}
                                             {/*$125 @ 70*/}
                                             {/*$75 @ 80*/}
-                                            {!twoHoursOnly && distNum < 50 ?(
+                                            {!friSatEvening && !twoHoursOnly && distNum < 50 ?(
                                                 <BookingFormPricesComponent
                                                     feePrice={550}
                                                     setFeeTotal={setFeeTotal}
@@ -739,7 +739,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                             </IonRow>
                                             {/*$180 @ 70*/}
                                             {/*$120 @ 80*/}
-                                            {!twoHoursOnly && distNum < 50 ? (
+                                            {!friSatEvening && !twoHoursOnly && distNum < 50 ? (
                                                 <BookingFormPricesComponent
                                                     feePrice={600}
                                                     setFeeTotal={setFeeTotal}
@@ -833,7 +833,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                             </IonRow>
                                             {/*$210 @ 70*/}
                                             {/*$140 @ 80*/}
-                                            {!twoHoursOnly && distNum < 50 ? (
+                                            {!friSatEvening && !twoHoursOnly && distNum < 50 ? (
                                                 <BookingFormPricesComponent
                                                     feePrice={700}
                                                     setFeeTotal={setFeeTotal}
@@ -970,7 +970,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                         {/*$220 @60*/}
                                         {/*$140 @70*/}
                                         {/*$60 @80*/}
-                                        {!twoHoursOnly && distNum < 50 ? (
+                                        {!friSatEvening && !twoHoursOnly && distNum < 50 ? (
                                             <BookingFormPricesComponent
                                                 feePrice={750}
                                                 setFeeTotal={setFeeTotal}
@@ -1153,7 +1153,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                         {/*$220 @60*/}
                                         {/*$140 @70*/}
                                         {/*$60 @80*/}
-                                        {!twoHoursOnly && distNum < 50 ? (
+                                        {!friSatEvening && !twoHoursOnly && distNum < 50 ? (
                                             <BookingFormPricesComponent
                                                 feePrice={800}
                                                 setFeeTotal={setFeeTotal}
@@ -1334,7 +1334,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                         </IonRow>
                                         {/*// $50 @$80*/}
                                         {/*$100 @ $70*/}
-                                        {!twoHoursOnly && distNum < 50 ? (
+                                        {!friSatEvening && !twoHoursOnly && distNum < 50 ? (
                                             <BookingFormPricesComponent
                                                 feePrice={850}
                                                 setFeeTotal={setFeeTotal}
