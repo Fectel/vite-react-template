@@ -229,7 +229,6 @@ const ContractPage = () => {
 
 
                 console.log(url)
-                // setLoading(true)
 
 
 
@@ -252,7 +251,7 @@ const ContractPage = () => {
 
                 }).then(response => {
                     console.log(response.data.url)
-                    // setLoading(false)
+                    setLoading(false)
 
                     window.location.href= response.data.url;
 
@@ -270,6 +269,8 @@ const ContractPage = () => {
     };
 
     async function onContractSubmit() {
+        setLoading(true)
+
         let bUrl;
         console.log(contract, "onSubmitContracvgt")
         if(!contract.contractSignatureUrl || contract.contractSignatureUrl === ""){
@@ -451,9 +452,7 @@ const ContractPage = () => {
                             </IonModal>
                         )}
 
-                        {loading ? (
-                            <div>{Loading()}</div>
-                        ):(
+                       
                             <IonCard style={{width:"95%", maxWidth:"55em", margin:"1em auto",
                                 // backgroundColor:"rgba(255,249,187,0.5)"}}
                                      backgroundColor:"black"}}
@@ -719,10 +718,16 @@ const ContractPage = () => {
         
                                 {checked && contract.status === "Contract is Ready" && (
                                     <IonButton onClick={() => onContractSubmit()} color="primary" style={{textAlign: "center",width: "100%" , height:"5em",color: "white", padding: ".5em", backgroundColor: "white", margin: "auto"}}>
+                                       {loading ? (
+                                            <div>{Loading()}</div>
+                                            ):(
+                                                <div>
+
                                         <IonIcon icon={card} style={{marginRight:".5em"}}/>
         
                                         Deposit Fee Due: $<span style={{fontWeight: "bold"}}>{contract.feeDeposit}</span>
-        
+                                            </div>
+                                        )}
                                     </IonButton>
         
                                     // <IonItem style={{height: "fit-content", padding: "0",}}>
@@ -776,7 +781,7 @@ const ContractPage = () => {
         
         
                             </IonCard>
-                        )}
+                        
 
                   
 
