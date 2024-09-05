@@ -118,7 +118,11 @@ const SuccessPayingRemainingBalance = () => {
 
         <IonPage>
             <HeaderWithoutImg />
-            <IonContent>
+            {loading ? (
+                <div>{Loading()}</div>
+
+            ):(
+                <IonContent>
 
                 {url !== "" && (
                     <IonModal style={{
@@ -140,6 +144,8 @@ const SuccessPayingRemainingBalance = () => {
 
 
             </IonContent>
+            )}
+          
 
         </IonPage>
     )
