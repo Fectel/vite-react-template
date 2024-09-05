@@ -229,6 +229,8 @@ const ContractPage = () => {
 
 
                 console.log(url)
+                setLoading(true)
+
 
 
                 axios({
@@ -277,7 +279,6 @@ const ContractPage = () => {
             console.log(bUrl)
         }
 
-        setLoading(true)
 
        let url = await saveContractSignature(contract.docId, bUrl)
         console.log(url)
