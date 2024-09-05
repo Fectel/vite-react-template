@@ -717,7 +717,7 @@ const ContractPage = () => {
                                 </div>
         
                                 {checked && contract.status === "Contract is Ready" && (
-                                    <IonButton onClick={() => onContractSubmit()} color="primary" style={{textAlign: "center",width: "100%" , height:"5em",color: "white", padding: ".5em", backgroundColor: "white", margin: "auto"}}>
+                                    <IonButton disabled={loading} onClick={() => onContractSubmit()} color="primary" style={{textAlign: "center",width: "100%" , height:"5em",color: "white", padding: ".5em", backgroundColor: "white", margin: "auto"}}>
                                        {loading ? (
                                             <div>{Loading()}</div>
                                             ):(
@@ -763,16 +763,22 @@ const ContractPage = () => {
         
                                 {contract.status === "Reserved" && (
                                     <div>
+                                        {loading ? (
+                                            <div>{Loading()}</div>
+                                        ):(
+                                            <IonButton
+                                            disabled={loading}
+                                                onClick={() => onPayRemainingBalanceClick()}
+                                                expand="block" style={{fontSize: ".9rem", marginTop: "1em auto"}} color="secondary">
+                                                <IonIcon style={{marginRight: ".5em"}} icon={card}/>
+            
+                                                <div>
+                                                    Pay Remaining Balance: ${contract.balanceDue}
+                                                </div>
+                                            </IonButton>
+                                        )}
         
-                                        <IonButton
-                                            onClick={() => onPayRemainingBalanceClick()}
-                                            expand="block" style={{fontSize: ".9rem", marginTop: "1em auto"}} color="secondary">
-                                            <IonIcon style={{marginRight: ".5em"}} icon={card}/>
-        
-                                            <div>
-                                                Pay Remaining Balance: ${contract.balanceDue}
-                                            </div>
-                                        </IonButton>
+                                       
                                     </div>
         
                                 )}

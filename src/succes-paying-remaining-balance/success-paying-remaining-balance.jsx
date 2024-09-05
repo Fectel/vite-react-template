@@ -9,6 +9,8 @@ import {
 import {updateBookingStatusToBookingPayed,} from "../firebase.js";
 import { useParams } from 'react-router-dom';
 import io from "socket.io-client"
+import ReactLoading from "react-loading";
+
 
 
 const SuccessPayingRemainingBalance = () => {

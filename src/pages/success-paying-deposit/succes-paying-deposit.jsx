@@ -7,6 +7,8 @@ import {
      IonModal,
     IonPage
 } from "@ionic/react";
+import ReactLoading from "react-loading";
+
 import { w3cwebsocket as W3CWebSocket} from "websocket";
 import { updateBookingStatusToReserved} from "../../firebase";
 import io from "socket.io-client"
