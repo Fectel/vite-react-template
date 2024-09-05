@@ -585,7 +585,7 @@ export default function BookingsComponent({booking, setRefresh}){
 
                                                 
                                                 <IonButton style={{fontSize: ".9rem", }} color="secondary"
-                                                                                                fill={outline}
+                                                                                                fill="outline"
                                                         //    onClick={() => onPayRemainingBalanceClick()}
                                                 >
                                                     {/* <IonIcon style={{marginRight: ".5em"}} icon={card}/> */}
@@ -597,7 +597,7 @@ export default function BookingsComponent({booking, setRefresh}){
                                                 </IonButton>
 
                                                 <IonButton style={{fontSize: ".9rem", }}
-                                                fill={outline}
+                                                fill="outline"
                                                 color="secondary"
                                                         //    onClick={() => onPayRemainingBalanceClick()}
                                                 >
