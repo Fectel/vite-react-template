@@ -1,5 +1,8 @@
 import React, {useEffect, useRef, useState} from "react"
 import HeaderWithoutImg from "../../components/header/header-without-img";
+
+import ReactLoading from "react-loading";
+
 import {
     IonButton,
     IonCard,
@@ -55,6 +58,8 @@ const ContractPage = () => {
     const [contractSignedBool, setContractSignedBool ]= useState(false)
     const [ isOpen, setIsOpen ] = useState(true)
 
+    const [loading, setLoading] = useState(false)
+
 
 
     // const ADMIN_SIGNATURE_URL = "https://firebasestorage.googleapis.com/v0/b/mariachi-amador.appspot.com/o/admin-signature%2Fsignature?alt=media&token=1db9eb29-02fb-4e79-ac01-938b00e1c6a2";
@@ -82,6 +87,14 @@ const ContractPage = () => {
 
     const { currentUser } = useAuth();
 
+    function Loading(){
+        return (
+            <div>
+                <ReactLoading type="bars" color="#0000FF"
+                height={100} width={50} />
+            </div>
+        )
+    }
 
     async function loadCurrentUser(){
 
@@ -237,6 +250,7 @@ const ContractPage = () => {
 
                 }).then(response => {
                     console.log(response.data.url)
+                    setLoading(false)
 
                     window.location.href= response.data.url;
 
@@ -263,6 +277,7 @@ const ContractPage = () => {
             console.log(bUrl)
         }
 
+        setLoading(true)
 
        let url = await saveContractSignature(contract.docId, bUrl)
         console.log(url)
@@ -300,6 +315,7 @@ const ContractPage = () => {
     }
     function onPayRemainingBalanceClick(){
 
+        setLoading(true)
         axios({
             url: 'pay-mariachi-remaining-balance',
             // url: 'create-pay-deposit-session',
@@ -317,6 +333,7 @@ const ContractPage = () => {
         }).then( response => {
 
 
+            setLoading(false)
             console.log(response.data.url)
             window.location.href = response.data.url;
 
@@ -433,329 +450,334 @@ const ContractPage = () => {
                             </IonModal>
                         )}
 
-
-                        <IonCard style={{width:"95%", maxWidth:"55em", margin:"1em auto",
-                        // backgroundColor:"rgba(255,249,187,0.5)"}}
-                             backgroundColor:"black"}}
-                    >
-                        <BookingComponentPaymentProgress
-                            remainingBalance={
-                                contract.feeTotal -  Math.round((contract.feeTotal/2)/50) * 50
-                            }
-                            contract={contract}
-                        />
-                        <div ref={elementRef}
-                             style={{backgroundColor:"white"}}
-                             crossOrigin="anonymous"
-                        >
-                            <IonCardHeader style={{textAlign: "center"}}>
-                                <IonCardTitle style={{color: "black"}}>Mariachi</IonCardTitle>
-                                <IonCardTitle style={{color: "black"}}>Hermanos Azteca</IonCardTitle>
-                                <IonCardSubtitle style={{color: "black"}}>Performance Contract</IonCardSubtitle>
-                            </IonCardHeader>
-                            <IonCardContent style={{padding: "0", }}>
-                                <div style={{width: "90%",  margin: "auto", fontSize:".8rem"}}>
-                                    <div>This contract Agreement is made on this day of
-                                        <span style={{color:"#FFD454",fontWeight:"bold", margin:"0 .2em",backgroundColor:"black", padding:"0 1em"}}> {currentDate.toString().substring(0,15)} </span>
-                                        between
-                                        <span  style={{color:"#FFD454",margin:"0 .2em",fontWeight:"bold", backgroundColor:"black", padding:"0 1em"}}> {contract.clientName} </span>
-                                        and Mariachi Hermanos Azteca for the hiring of Mariachi Hermanos Azteca.
-                                    </div>
-                                </div>
-                                <div  style={{
-                                    margin:"auto",
-                                    width:"fit-content",
-
-
-                                }}>
-                                    <div style={{margin: "1em auto", width:"fit-content",}}>It is agreed as follows: </div>
-
-                                    <div                                   >
-                                        <div>1. Date Of Performance:</div>
-                                        <div  style={{color:"#FFD454",
-                                            margin:"auto",
-                                            fontWeight:"bold", backgroundColor:"black", padding:"0 1em", width:"fit-content" }}> {contract.performanceDate}</div>
-                                    </div>
-                                    <div
-                                    >
-                                        <div>2. Performance Time:</div>
-                                        <div  style={{color:"#FFD454",
-                                            margin:"auto",
-
-                                            fontWeight:"bold", backgroundColor:"black", padding:"0 1em",width:"fit-content"  }}> {contract.performanceTime}</div>
-                                    </div>
-                                    <div
-                                    >
-                                        <div>3. Mariachi Group Size:</div>
-                                        <div style={{color:"#FFD454",
-                                            margin:"auto",                                        fontWeight:"bold", backgroundColor:"black", padding:"0 1em",width:"fit-content"  }}> {contract.numberOfMariachis}</div>
-                                    </div>
-                                    <div
-                                    >
-                                        <div>4. Performance Address:</div>
-                                        <div style={{color:"#FFD454",fontWeight:"bold",
-                                            margin:"auto",
-                                            backgroundColor:"black", padding:"0 1em",width:"fit-content"  }}> {contract.performanceAddress}</div>
-                                    </div>
-                                    <div
-                                    >
-                                        <div>5. Fee Total:</div>
-                                        <div style={{color:"#FFD454",fontWeight:"bold",
-                                            margin:"auto",
-                                            backgroundColor:"black", padding:"0 1em",width:"fit-content" }}> ${contract.feeTotal}</div>
-                                    </div>
-                                    <div
-                                    >
-                                        <div>6. Fee Deposit:</div>
-                                        <div style={{color:"#FFD454",fontWeight:"bold",
-                                            margin:"auto",
-                                            backgroundColor:"black", padding:"0 1em",width:"fit-content" }}> ${contract.feeDeposit}</div>
-                                    </div>
-                                    <div
-                                    >
-                                        <div>6. Fee Remaining:</div>
-                                        <div style={{color:"#FFD454",fontWeight:"bold",
-                                            margin:"auto",
-                                            backgroundColor:"black", padding:"0 1em" , width:"fit-content" }}> ${contract.feeTotal -contract.feeDeposit}</div>
-                                    </div>
-
-
-                                </div>
-                                <div style={{
-                                    fontSize: ".6rem",
-                                    textAlign: "left",
-                                    padding: "0em 1.5em",
-                                    marginTop: "2em",
-                                }}>
-                                    <div>   * Payment: Compensation for the the musical performance
-                                        will be  <span>${contract.feeTotal} </span>dollars, payable by cash, or card.
-                                        A ${contract.feeDeposit} deposit Fee is due on the signing of this contract.
-                                        This is a required condition for the contract to proceed;
-                                        if a ${contract.feeDeposit} deposit Fee is not tendered upon the signing
-                                        of this contract, no further obligation for either party
-                                        comes due. The remaining ${contract.feeTotal - contract.feeDeposit} Fee is due immediately
-                                        prior to Mariachi Hermanos Azteca's Performance, but may be made earlier.
-                                    </div>
-                                    <br></br>
-
-                                    <div >
-                                        * Cancellation: If full payment is not made by the time immediately
-                                        prior to Mariachi Hermanos Azteca's performance, The performance may
-                                        be cancelled by Mariachi Hermanos Azteca, and <span>{contract.clientName}</span> may not seek
-                                        any damages.Cancellation may be made by <span>{contract.clientName}</span> in which case Operator's ${contract.feeDeposit} deposit
-                                        of Fee is non-refundable, but Operator will not have to pay the remaining
-                                        ${contract.feeTotal - contract.feeDeposit} of Fee. Mariachi Hermanos Azteca may cancel at any time prior, in which
-                                        case Mariachi Hermanos Azteca must refund Fee in its entirety.
-
-                                    </div>
-                                    <br/>
-                                    <div> * Missing Musicians: In the event that there are less than the agreed upon musicians at the performance from unpredictable occurrences.
-                                        The client will be refunded $75 per musician missing per hour.
-
-
-                                    </div>
-                                    <br></br>
-                                    <div>* Force Majeure. In the event Show cannot reasonably be put on because of unpredictable occurrences
-                                        such as an act of nature, government, or illness/disability of Mariachi Hermanos Azteca, the
-                                        50% deposit of Fee is non-refundable, but no other portion of Fee is due, and the parties may
-                                        negotiate a substitute Show on the same terms as this Agreement save for the time of
-                                        with no further deposit of Fee due, in which case a new Agreement reflecting this will be
-                                        signed by the parties.
-                                        No further damages may be sought for failure to perform because of force majeure.</div>
-                                    <br></br>
-                                    <div>*
-                                        Break: Typically the performance will have a 15 minute break after the first hour,
-                                        then again after 45 minutes, until the completion of the time. We are flexible
-                                        and will cooperate with the client.
-
-                                    </div>
-
-
-                                </div>
-                                <div
-
-                                    style={{
-                                        padding: "1em",
-                                        textAlign: "center",
-                                        fontSize: ".7rem",
-                                    }}
-                                >
-                                    <div >The below-signed Mariachi Hermanos Azteca Representative warrants
-                                        he has authority to enforceably sign this agreement for Mariachi
-                                        Tierra Azteca in its entirety. The below signed Operator's Representative
-                                        warrants s/he has authority to bind Operator and Venue.
-
-                                    </div>
-                                    <div >
-                                        <div>Signature of Band Representative:</div>
-                                        <img style={{
-                                            // backgroundColor:"white",
-                                            maxWidth:"35em",
-                                        }} src={adminSignature} />
-                                        <div>
-                                            <div>Hector Amador</div>
-                                            <div>Mariachi Hermanos Azteca</div>
-                                        </div>
-
-
-
-
-
-                                    </div>
-                                    <div
-                                    >
-                                        <div>Client Signature:</div>
-
-                                        <div>
-
-                                            {(!contract.contractSignatureUrl  )||contract.contractSignatureUrl === undefined || contract.contractSignatureUrl === "" && (
-
-                                                <div >
-                                                    <div style={{border:"2px solid gold",
-                                                        backgroundColor: "white", margin:"auto",
-                                                        width: "100%", maxWidth:"40em", height: 200}}>
-                                                        <SignatureCanvas
-
-                                                            canvasProps={{width: 800, height: 200,
-                                                                backgroundColor:"white",
-                                                            }}
-                                                            ref={data=>setSign(data)}
-                                                            // onBegin={() => console.log("on begin!")}
-                                                            onEnd={() => onSignEnd()}
-                                                        />
-                                                    </div>
-
-                                                    <br></br>
-                                                    {contract.status !== "Reserved" && contract.status !== "Ready For Performance!"&& (
-                                                        <button style={{height:"30px",width:"60px"}} onClick={handleClear}>Clear</button>
-
-                                                    )}
-                                                </div>
-                                            )}
-
-                                            {/*<button  style={{height:"30px",width:"60px"}} onClick={handleGenerate}>Save</button>*/}
-
-                                            <br/><br/>
-                                            {(contract.contractSignatureUrl && contract.contractSignatureUrl !== "") ? (
-                                                <div style={{backgroundColor:"white",
-                                                    // width: 800,
-                                                    maxWidth:"40em",
-                                                    height: 80,
-                                                    margin: "1em auto",
-                                                }}>
-
-                                                    <img  style={{
-                                                        // backgroundColor:"white",
-                                                        width: "70%", height: "80%",
-                                                    }}
-                                                          src={contract.contractSignatureUrl} />
-
-                                                    {contract.status !== "Reserved" && contract.status !== "Ready For Performance!"&& (
-                                                        <button style={{height:"30px",width:"60px"}} onClick={handleClear}>Clear</button>
-
-                                                        )}
-                                                </div >
-                                            ):(
-                                                <div >
-                                                    <div style={{border:"2px solid gold",
-                                                        backgroundColor: "white", margin:"auto",
-                                                        width: "100%", maxWidth:"40em", height: 200}}>
-                                                        <SignatureCanvas
-
-                                                            canvasProps={{width: 800, height: 200,
-                                                                backgroundColor:"white",
-                                                            }}
-                                                            ref={data=>setSign(data)}
-                                                            // onBegin={() => console.log("on begin!")}
-                                                            onEnd={() => onSignEnd()}
-                                                        />
-                                                    </div>
-
-                                                    <br></br>
-                                                    {contract.status !== "Reserved" && (
-                                                        <button style={{height:"30px",width:"60px"}} onClick={handleClear}>Clear</button>
-
-                                                    )}
-                                                </div>
-                                            )}
-
-                                        </div>
-
-
-                                    </div>
-
-                                    {renderCheckbox()}
-
-
-                                    <div >Client's typed name:</div>
-                                    <div>{contract.clientName}</div>
-                                    {/*</div>*/}
-                                </div>
-
-
-
-                            </IonCardContent>
-                        </div>
-
-                        {checked && contract.status === "Contract is Ready" && (
-                            <IonButton onClick={() => onContractSubmit()} color="primary" style={{textAlign: "center",width: "100%" , height:"5em",color: "white", padding: ".5em", backgroundColor: "white", margin: "auto"}}>
-                                <IonIcon icon={card} style={{marginRight:".5em"}}/>
-
-                                Deposit Fee Due: $<span style={{fontWeight: "bold"}}>{contract.feeDeposit}</span>
-
-                            </IonButton>
-
-                            // <IonItem style={{height: "fit-content", padding: "0",}}>
-                            //     <IonGrid style={{ width: "100%", padding: "0", margin: ".2em"}}>
-                            //         <IonRow >
-                            //
-                            //         </IonRow>
-                            //         <IonRow style={{ width: "100%"}}>
-                            //             <IonButton onClick={() => onContractSubmit()} color="secondary" >
-                            //                 Pay with Card</IonButton>
-                            //             {/*<IonButton color="secondary" >Pay with Zelle</IonButton>*/}
-                            //             {/*<IonButton color="secondary" >Google Pay</IonButton>*/}
-                            //
-                            //         </IonRow>
-                            //     </IonGrid>
-                            // </IonItem>
-
-
-
-                        )}
-                        {contract.status === "Ready For Performance!" && (
-                            <IonButton
-                                onClick={() => onDownloadContractCLick()}
+                        {loading ? (
+                            <div>{Loading()}</div>
+                        ):(
+                            <IonCard style={{width:"95%", maxWidth:"55em", margin:"1em auto",
+                                // backgroundColor:"rgba(255,249,187,0.5)"}}
+                                     backgroundColor:"black"}}
                             >
-                                <IonIcon  style={{
-                                    marginRight:".5em",
-                                    marginBottom:".3em",
-
-                                }}icon={downloadOutline} />
-                                Open Contract Img</IonButton>
-
-                        )}
-
-                        {contract.status === "Reserved" && (
-                            <div>
-
-                                <IonButton
-                                    onClick={() => onPayRemainingBalanceClick()}
-                                    expand="block" style={{fontSize: ".9rem", marginTop: "1em auto"}} color="secondary">
-                                    <IonIcon style={{marginRight: ".5em"}} icon={card}/>
-
+                                <BookingComponentPaymentProgress
+                                    remainingBalance={
+                                        contract.feeTotal -  Math.round((contract.feeTotal/2)/50) * 50
+                                    }
+                                    contract={contract}
+                                />
+                                <div ref={elementRef}
+                                     style={{backgroundColor:"white"}}
+                                     crossOrigin="anonymous"
+                                >
+                                    <IonCardHeader style={{textAlign: "center"}}>
+                                        <IonCardTitle style={{color: "black"}}>Mariachi</IonCardTitle>
+                                        <IonCardTitle style={{color: "black"}}>Hermanos Azteca</IonCardTitle>
+                                        <IonCardSubtitle style={{color: "black"}}>Performance Contract</IonCardSubtitle>
+                                    </IonCardHeader>
+                                    <IonCardContent style={{padding: "0", }}>
+                                        <div style={{width: "90%",  margin: "auto", fontSize:".8rem"}}>
+                                            <div>This contract Agreement is made on this day of
+                                                <span style={{color:"#FFD454",fontWeight:"bold", margin:"0 .2em",backgroundColor:"black", padding:"0 1em"}}> {currentDate.toString().substring(0,15)} </span>
+                                                between
+                                                <span  style={{color:"#FFD454",margin:"0 .2em",fontWeight:"bold", backgroundColor:"black", padding:"0 1em"}}> {contract.clientName} </span>
+                                                and Mariachi Hermanos Azteca for the hiring of Mariachi Hermanos Azteca.
+                                            </div>
+                                        </div>
+                                        <div  style={{
+                                            margin:"auto",
+                                            width:"fit-content",
+        
+        
+                                        }}>
+                                            <div style={{margin: "1em auto", width:"fit-content",}}>It is agreed as follows: </div>
+        
+                                            <div                                   >
+                                                <div>1. Date Of Performance:</div>
+                                                <div  style={{color:"#FFD454",
+                                                    margin:"auto",
+                                                    fontWeight:"bold", backgroundColor:"black", padding:"0 1em", width:"fit-content" }}> {contract.performanceDate}</div>
+                                            </div>
+                                            <div
+                                            >
+                                                <div>2. Performance Time:</div>
+                                                <div  style={{color:"#FFD454",
+                                                    margin:"auto",
+        
+                                                    fontWeight:"bold", backgroundColor:"black", padding:"0 1em",width:"fit-content"  }}> {contract.performanceTime}</div>
+                                            </div>
+                                            <div
+                                            >
+                                                <div>3. Mariachi Group Size:</div>
+                                                <div style={{color:"#FFD454",
+                                                    margin:"auto",                                        fontWeight:"bold", backgroundColor:"black", padding:"0 1em",width:"fit-content"  }}> {contract.numberOfMariachis}</div>
+                                            </div>
+                                            <div
+                                            >
+                                                <div>4. Performance Address:</div>
+                                                <div style={{color:"#FFD454",fontWeight:"bold",
+                                                    margin:"auto",
+                                                    backgroundColor:"black", padding:"0 1em",width:"fit-content"  }}> {contract.performanceAddress}</div>
+                                            </div>
+                                            <div
+                                            >
+                                                <div>5. Fee Total:</div>
+                                                <div style={{color:"#FFD454",fontWeight:"bold",
+                                                    margin:"auto",
+                                                    backgroundColor:"black", padding:"0 1em",width:"fit-content" }}> ${contract.feeTotal}</div>
+                                            </div>
+                                            <div
+                                            >
+                                                <div>6. Fee Deposit:</div>
+                                                <div style={{color:"#FFD454",fontWeight:"bold",
+                                                    margin:"auto",
+                                                    backgroundColor:"black", padding:"0 1em",width:"fit-content" }}> ${contract.feeDeposit}</div>
+                                            </div>
+                                            <div
+                                            >
+                                                <div>6. Fee Remaining:</div>
+                                                <div style={{color:"#FFD454",fontWeight:"bold",
+                                                    margin:"auto",
+                                                    backgroundColor:"black", padding:"0 1em" , width:"fit-content" }}> ${contract.feeTotal -contract.feeDeposit}</div>
+                                            </div>
+        
+        
+                                        </div>
+                                        <div style={{
+                                            fontSize: ".6rem",
+                                            textAlign: "left",
+                                            padding: "0em 1.5em",
+                                            marginTop: "2em",
+                                        }}>
+                                            <div>   * Payment: Compensation for the the musical performance
+                                                will be  <span>${contract.feeTotal} </span>dollars, payable by cash, or card.
+                                                A ${contract.feeDeposit} deposit Fee is due on the signing of this contract.
+                                                This is a required condition for the contract to proceed;
+                                                if a ${contract.feeDeposit} deposit Fee is not tendered upon the signing
+                                                of this contract, no further obligation for either party
+                                                comes due. The remaining ${contract.feeTotal - contract.feeDeposit} Fee is due immediately
+                                                prior to Mariachi Hermanos Azteca's Performance, but may be made earlier.
+                                            </div>
+                                            <br></br>
+        
+                                            <div >
+                                                * Cancellation: If full payment is not made by the time immediately
+                                                prior to Mariachi Hermanos Azteca's performance, The performance may
+                                                be cancelled by Mariachi Hermanos Azteca, and <span>{contract.clientName}</span> may not seek
+                                                any damages.Cancellation may be made by <span>{contract.clientName}</span> in which case Operator's ${contract.feeDeposit} deposit
+                                                of Fee is non-refundable, but Operator will not have to pay the remaining
+                                                ${contract.feeTotal - contract.feeDeposit} of Fee. Mariachi Hermanos Azteca may cancel at any time prior, in which
+                                                case Mariachi Hermanos Azteca must refund Fee in its entirety.
+        
+                                            </div>
+                                            <br/>
+                                            <div> * Missing Musicians: In the event that there are less than the agreed upon musicians at the performance from unpredictable occurrences.
+                                                The client will be refunded $75 per musician missing per hour.
+        
+        
+                                            </div>
+                                            <br></br>
+                                            <div>* Force Majeure. In the event Show cannot reasonably be put on because of unpredictable occurrences
+                                                such as an act of nature, government, or illness/disability of Mariachi Hermanos Azteca, the
+                                                50% deposit of Fee is non-refundable, but no other portion of Fee is due, and the parties may
+                                                negotiate a substitute Show on the same terms as this Agreement save for the time of
+                                                with no further deposit of Fee due, in which case a new Agreement reflecting this will be
+                                                signed by the parties.
+                                                No further damages may be sought for failure to perform because of force majeure.</div>
+                                            <br></br>
+                                            <div>*
+                                                Break: Typically the performance will have a 15 minute break after the first hour,
+                                                then again after 45 minutes, until the completion of the time. We are flexible
+                                                and will cooperate with the client.
+        
+                                            </div>
+        
+        
+                                        </div>
+                                        <div
+        
+                                            style={{
+                                                padding: "1em",
+                                                textAlign: "center",
+                                                fontSize: ".7rem",
+                                            }}
+                                        >
+                                            <div >The below-signed Mariachi Hermanos Azteca Representative warrants
+                                                he has authority to enforceably sign this agreement for Mariachi
+                                                Tierra Azteca in its entirety. The below signed Operator's Representative
+                                                warrants s/he has authority to bind Operator and Venue.
+        
+                                            </div>
+                                            <div >
+                                                <div>Signature of Band Representative:</div>
+                                                <img style={{
+                                                    // backgroundColor:"white",
+                                                    maxWidth:"35em",
+                                                }} src={adminSignature} />
+                                                <div>
+                                                    <div>Hector Amador</div>
+                                                    <div>Mariachi Hermanos Azteca</div>
+                                                </div>
+        
+        
+        
+        
+        
+                                            </div>
+                                            <div
+                                            >
+                                                <div>Client Signature:</div>
+        
+                                                <div>
+        
+                                                    {(!contract.contractSignatureUrl  )||contract.contractSignatureUrl === undefined || contract.contractSignatureUrl === "" && (
+        
+                                                        <div >
+                                                            <div style={{border:"2px solid gold",
+                                                                backgroundColor: "white", margin:"auto",
+                                                                width: "100%", maxWidth:"40em", height: 200}}>
+                                                                <SignatureCanvas
+        
+                                                                    canvasProps={{width: 800, height: 200,
+                                                                        backgroundColor:"white",
+                                                                    }}
+                                                                    ref={data=>setSign(data)}
+                                                                    // onBegin={() => console.log("on begin!")}
+                                                                    onEnd={() => onSignEnd()}
+                                                                />
+                                                            </div>
+        
+                                                            <br></br>
+                                                            {contract.status !== "Reserved" && contract.status !== "Ready For Performance!"&& (
+                                                                <button style={{height:"30px",width:"60px"}} onClick={handleClear}>Clear</button>
+        
+                                                            )}
+                                                        </div>
+                                                    )}
+        
+                                                    {/*<button  style={{height:"30px",width:"60px"}} onClick={handleGenerate}>Save</button>*/}
+        
+                                                    <br/><br/>
+                                                    {(contract.contractSignatureUrl && contract.contractSignatureUrl !== "") ? (
+                                                        <div style={{backgroundColor:"white",
+                                                            // width: 800,
+                                                            maxWidth:"40em",
+                                                            height: 80,
+                                                            margin: "1em auto",
+                                                        }}>
+        
+                                                            <img  style={{
+                                                                // backgroundColor:"white",
+                                                                width: "70%", height: "80%",
+                                                            }}
+                                                                  src={contract.contractSignatureUrl} />
+        
+                                                            {contract.status !== "Reserved" && contract.status !== "Ready For Performance!"&& (
+                                                                <button style={{height:"30px",width:"60px"}} onClick={handleClear}>Clear</button>
+        
+                                                                )}
+                                                        </div >
+                                                    ):(
+                                                        <div >
+                                                            <div style={{border:"2px solid gold",
+                                                                backgroundColor: "white", margin:"auto",
+                                                                width: "100%", maxWidth:"40em", height: 200}}>
+                                                                <SignatureCanvas
+        
+                                                                    canvasProps={{width: 800, height: 200,
+                                                                        backgroundColor:"white",
+                                                                    }}
+                                                                    ref={data=>setSign(data)}
+                                                                    // onBegin={() => console.log("on begin!")}
+                                                                    onEnd={() => onSignEnd()}
+                                                                />
+                                                            </div>
+        
+                                                            <br></br>
+                                                            {contract.status !== "Reserved" && (
+                                                                <button style={{height:"30px",width:"60px"}} onClick={handleClear}>Clear</button>
+        
+                                                            )}
+                                                        </div>
+                                                    )}
+        
+                                                </div>
+        
+        
+                                            </div>
+        
+                                            {renderCheckbox()}
+        
+        
+                                            <div >Client's typed name:</div>
+                                            <div>{contract.clientName}</div>
+                                            {/*</div>*/}
+                                        </div>
+        
+        
+        
+                                    </IonCardContent>
+                                </div>
+        
+                                {checked && contract.status === "Contract is Ready" && (
+                                    <IonButton onClick={() => onContractSubmit()} color="primary" style={{textAlign: "center",width: "100%" , height:"5em",color: "white", padding: ".5em", backgroundColor: "white", margin: "auto"}}>
+                                        <IonIcon icon={card} style={{marginRight:".5em"}}/>
+        
+                                        Deposit Fee Due: $<span style={{fontWeight: "bold"}}>{contract.feeDeposit}</span>
+        
+                                    </IonButton>
+        
+                                    // <IonItem style={{height: "fit-content", padding: "0",}}>
+                                    //     <IonGrid style={{ width: "100%", padding: "0", margin: ".2em"}}>
+                                    //         <IonRow >
+                                    //
+                                    //         </IonRow>
+                                    //         <IonRow style={{ width: "100%"}}>
+                                    //             <IonButton onClick={() => onContractSubmit()} color="secondary" >
+                                    //                 Pay with Card</IonButton>
+                                    //             {/*<IonButton color="secondary" >Pay with Zelle</IonButton>*/}
+                                    //             {/*<IonButton color="secondary" >Google Pay</IonButton>*/}
+                                    //
+                                    //         </IonRow>
+                                    //     </IonGrid>
+                                    // </IonItem>
+        
+        
+        
+                                )}
+                                {contract.status === "Ready For Performance!" && (
+                                    <IonButton
+                                        onClick={() => onDownloadContractCLick()}
+                                    >
+                                        <IonIcon  style={{
+                                            marginRight:".5em",
+                                            marginBottom:".3em",
+        
+                                        }}icon={downloadOutline} />
+                                        Open Contract Img</IonButton>
+        
+                                )}
+        
+                                {contract.status === "Reserved" && (
                                     <div>
-                                        Pay Remaining Balance: ${contract.balanceDue}
+        
+                                        <IonButton
+                                            onClick={() => onPayRemainingBalanceClick()}
+                                            expand="block" style={{fontSize: ".9rem", marginTop: "1em auto"}} color="secondary">
+                                            <IonIcon style={{marginRight: ".5em"}} icon={card}/>
+        
+                                            <div>
+                                                Pay Remaining Balance: ${contract.balanceDue}
+                                            </div>
+                                        </IonButton>
                                     </div>
-                                </IonButton>
-                            </div>
-
+        
+                                )}
+        
+        
+        
+        
+                            </IonCard>
                         )}
 
-
-
-
-                    </IonCard>
+                  
 
                     </IonContent>
 
