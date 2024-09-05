@@ -55,7 +55,7 @@ export default function BookingsComponent({booking, setRefresh}){
             'template_0258ppo',
             {name: booking.clientName,
                 bookingDate: booking.performanceDate,
-                url: `http://localhost:3000/contract-page/${booking.docId}`,
+                url: `https://localhost:3000/contract-page/${booking.docId}`,
                 email: booking.clientEmail, subject: "Your booking is ready!"},
             '81Ta3k98ORyxKyQ1E',
         )
