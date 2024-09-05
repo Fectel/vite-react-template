@@ -476,7 +476,7 @@ export default function BookingsComponent({booking, setRefresh}){
                                                 }}>
                                                     <IonButton style={{fontSize: ".6rem",
                                                     }} color="primary"s
-                                                               onClick={() => {navigator.clipboard.writeText(`http://mariachichingon.com/contract-page/${booking.docId}`)}}
+                                                               onClick={() => {navigator.clipboard.writeText(`https://mariachichingon.com/contract-page/${booking.docId}`)}}
 
                                                     >
                                                         Copy Link To Contract
@@ -494,7 +494,7 @@ export default function BookingsComponent({booking, setRefresh}){
                                                     width:"fit-content"
                                                 }}>
                                                     <IonButton style={{fontSize: ".6rem", }} color="primary"s
-                                                               onClick={() => {navigator.clipboard.writeText(`http://localhost:3000/contract-page/${booking.docId}`)}}
+                                                               onClick={() => {navigator.clipboard.writeText(`https://mariachichingon.com/contract-page/${booking.docId}`)}}
 
                                                     >
                                                         Copy Link To Pay Remaining Balance
@@ -582,7 +582,30 @@ export default function BookingsComponent({booking, setRefresh}){
                                                     </div>
 
                                                 </IonButton>
-                                                <IonButton color="secondary"><IonIcon icon={shareOutline} /></IonButton>
+
+                                                
+                                                <IonButton style={{fontSize: ".9rem", }} color="secondary"
+                                                        //    onClick={() => onPayRemainingBalanceClick()}
+                                                >
+                                                    {/* <IonIcon style={{marginRight: ".5em"}} icon={card}/> */}
+
+                                                    <div>
+                                                    💵 Payed Deposit : ${booking.feeDeposit} Cash!
+                                                    </div>
+
+                                                </IonButton>
+
+                                                <IonButton style={{fontSize: ".9rem", }} color="secondary"
+                                                        //    onClick={() => onPayRemainingBalanceClick()}
+                                                >
+                                                    {/* <IonIcon style={{marginRight: ".5em"}} icon={card}/> */}
+
+                                                    <div>
+                                                    💵 Payed Remaining Balance: ${booking.balanceDue} Cash!
+                                                    </div>
+
+                                                </IonButton>
+
 
                                             </div>
 
