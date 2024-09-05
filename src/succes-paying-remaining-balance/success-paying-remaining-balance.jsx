@@ -20,10 +20,12 @@ const SuccessPayingRemainingBalance = () => {
     )
     const [url , setUrl ] = useState("")
     const [amount , setAmount ] = useState(0)
+    const [loading, setLoading ] = useState(false)
 
     const params = useParams();
 
     console.log("Succds page")
+    
     function checkClientWSConnection(){
 
 
@@ -36,6 +38,7 @@ const SuccessPayingRemainingBalance = () => {
 
             updateBookingStatusToBookingPayed(params.clientId,params.contractId, message).then(r =>
                 {
+                    setLoading(false)
                     // also add the link to download the pdf
                     // and include tha link in the client dashboard bookings component
                     window.location.href = '/client-dashboard'
@@ -86,10 +89,19 @@ const SuccessPayingRemainingBalance = () => {
         // console.log("checkClientWSConnection", client)
 
     }
+    function Loading(){
+        return (
+            <div style={{width: "fit-content", margin: "auto", height:"fit-content"}}>
+                <ReactLoading type="bars" color="#0000FF"
+                height={100} width={50} />
+            </div>
+        )
+    }
 
 
     useEffect(() => {
 
+        setLoading(true)
         checkClientWSConnection()
 
         // updateBookingStatusToBookingPayed(params.clientId,params.contractId).then(r =>

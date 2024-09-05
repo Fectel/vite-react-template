@@ -24,6 +24,7 @@ const SuccessPayingDeposit = () => {
     const [url , setUrl ] = useState("")
     const [amount , setAmount ] = useState(0)
 
+    const [loading, setLoading ] = useState(false)
     const params = useParams();
 
     let depositInvoiceUrl;
@@ -63,6 +64,7 @@ const SuccessPayingDeposit = () => {
             console.log(message, "CONTRACT-SIGNATURE-URL")
         } )
         socket.on("contractImgUrl", async (message) => {
+            setLoading(false)
             console.log(message, "CONTRACT-IMG-URL")
              await updateBookingStatusToReserved(params.clientId,params.contractId, depositInvoiceUrl, message).then(r =>
                 {
@@ -121,7 +123,17 @@ const SuccessPayingDeposit = () => {
 
     }
 
+    function Loading(){
+        return (
+            <div style={{width: "fit-content", margin: "auto", height:"fit-content"}}>
+                <ReactLoading type="bars" color="#0000FF"
+                height={100} width={50} />
+            </div>
+        )
+    }
+
     useEffect(() => {
+        setLoading(true)
         checkClientWSConnection()
         console.log("PArams",params)
 
@@ -133,7 +145,11 @@ const SuccessPayingDeposit = () => {
 
         <IonPage>
             <HeaderWithoutImg />
-            <IonContent>
+            {loading ? (
+            <div>{Loading}
+            </div>
+            ):(
+                <IonContent>
 
                 {url !== "" && (
                     <IonModal style={{
@@ -154,6 +170,8 @@ const SuccessPayingDeposit = () => {
 
 
             </IonContent>
+            )}
+            
 
         </IonPage>
     )
