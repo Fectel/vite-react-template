@@ -229,7 +229,7 @@ const ContractPage = () => {
 
 
                 console.log(url)
-                setLoading(true)
+                // setLoading(true)
 
 
 
@@ -252,7 +252,7 @@ const ContractPage = () => {
 
                 }).then(response => {
                     console.log(response.data.url)
-                    setLoading(false)
+                    // setLoading(false)
 
                     window.location.href= response.data.url;
 
