@@ -609,7 +609,7 @@ const ContractPage = () => {
                                         >
                                             <div >The below-signed Mariachi Hermanos Azteca Representative warrants
                                                 he has authority to enforceably sign this agreement for Mariachi
-                                                Tierra Azteca in its entirety. The below signed Operator's Representative
+                                                Hermanos Azteca in its entirety. The below signed Operator's Representative
                                                 warrants s/he has authority to bind Operator and Venue.
         
                                             </div>
