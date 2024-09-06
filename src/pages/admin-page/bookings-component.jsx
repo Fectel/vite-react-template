@@ -608,7 +608,7 @@ export default function BookingsComponent({booking, setRefresh}){
                                                     </IonButton>
                                                 )}
                                                
-
+                                               {booking.status === "Reserved" && (
                                                 <IonButton style={{fontSize: ".9rem", }}
                                                 fill="outline"
                                                 color="secondary"
@@ -621,6 +621,9 @@ export default function BookingsComponent({booking, setRefresh}){
                                                     </div>
 
                                                 </IonButton>
+                                               )}
+
+                                                
 
                                                 <IonButton style={{fontSize: ".9rem", }}
                                                 fill="outline"
