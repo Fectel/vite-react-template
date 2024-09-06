@@ -13,7 +13,8 @@ import emailjs from "emailjs-com";
 import {
     adminDeleteClientBookingRequestDocument,
     updateBookingStatusToContractReady,
-    updateBookingStatusToReservedCash
+    updateBookingStatusToReservedCash,
+    updateBookingStatusToPayedCash
 } from "../../firebase";
 import {useAuth} from  "../../auth-context/auth-context.jsx"
 import axios from "axios";
@@ -52,6 +53,10 @@ export default function BookingsComponent({booking, setRefresh}){
         await updateBookingStatusToReservedCash(currentUser.uid, booking.docId)
         setRefresh(true)
 
+    }
+    async function onPayRemainingBalanceCashClick(){
+        await updateBookingStatusToPayedCash(currentUser.uid, booking.docId)
+        setRefresh(true)
     }
     function onApproveButtonClick(){
 
@@ -607,7 +612,7 @@ export default function BookingsComponent({booking, setRefresh}){
                                                 <IonButton style={{fontSize: ".9rem", }}
                                                 fill="outline"
                                                 color="secondary"
-                                                        //    onClick={() => onPayRemainingBalanceClick()}
+                                                           onClick={() => onPayRemainingBalanceCashClick()}
                                                 >
                                                     {/* <IonIcon style={{marginRight: ".5em"}} icon={card}/> */}
 
