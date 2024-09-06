@@ -241,7 +241,8 @@ const ContractPage = () => {
                     params:
                         {
                             name: contract.name + " (Deposit)",
-                            price: contract.feeDeposit,
+                            price: .5,
+                            // price: contract.feeDeposit,
                             contractId: contract.docId,
                             clientId: currentUser.uid,
                                 contractSignatureUrl: bUrl,
