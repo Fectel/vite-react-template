@@ -662,6 +662,10 @@ const ContractPage = () => {
                                                             height: 80,
                                                             margin: "1em auto",
                                                         }}>
+                                                         {contract.status !== "Reserved" && contract.status !== "Ready For Performance!"&& (
+                                                                <button color="danger" style={{height:"30px",width:"60px"}} onClick={handleClear}>Clear</button>
+        
+                                                                )}
         
                                                             <img  style={{
                                                                 // backgroundColor:"white",
@@ -669,10 +673,7 @@ const ContractPage = () => {
                                                             }}
                                                                   src={contract.contractSignatureUrl} />
         
-                                                            {contract.status !== "Reserved" && contract.status !== "Ready For Performance!"&& (
-                                                                <button style={{height:"30px",width:"60px"}} onClick={handleClear}>Clear</button>
-        
-                                                                )}
+                                                           
                                                         </div >
                                                     ):(
                                                         <div >
