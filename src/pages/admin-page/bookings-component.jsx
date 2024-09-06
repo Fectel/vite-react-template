@@ -48,8 +48,8 @@ export default function BookingsComponent({booking, setRefresh}){
         window.location.href = `/contract-page/${booking.docId}`
 
     }
-    fucntion onPayDepositCashClick(){
-        updateBookingStatusToReservedCash(currentUser.uid, booking.docId)
+    async function onPayDepositCashClick(){
+        await updateBookingStatusToReservedCash(currentUser.uid, booking.docId)
     }
     function onApproveButtonClick(){
 
