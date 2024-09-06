@@ -50,6 +50,8 @@ export default function BookingsComponent({booking, setRefresh}){
     }
     async function onPayDepositCashClick(){
         await updateBookingStatusToReservedCash(currentUser.uid, booking.docId)
+        setRefresh(true)
+
     }
     function onApproveButtonClick(){
 
@@ -587,18 +589,20 @@ export default function BookingsComponent({booking, setRefresh}){
 
                                                 </IonButton>
 
-                                                
-                                                <IonButton style={{fontSize: ".9rem", }} color="secondary"
-                                                                                                fill="outline"
-                                                           onClick={() => onPayDepositCashClick()}
-                                                >
+                                                {booking.status === "Contract is Ready" && (
+                                                    <IonButton style={{fontSize: ".9rem", }} color="secondary"
+                                                    fill="outline"
+                                                    onClick={() => onPayDepositCashClick()}
+                                                    >
                                                     {/* <IonIcon style={{marginRight: ".5em"}} icon={card}/> */}
 
                                                     <div>
                                                     💵 Payed Deposit : ${booking.feeDeposit} Cash!
                                                     </div>
 
-                                                </IonButton>
+                                                    </IonButton>
+                                                )}
+                                               
 
                                                 <IonButton style={{fontSize: ".9rem", }}
                                                 fill="outline"
