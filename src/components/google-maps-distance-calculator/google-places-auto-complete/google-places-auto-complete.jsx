@@ -207,11 +207,25 @@ setAddressTravelTime, setAddressDistance,
                                             ${fee + (2 * (fee / 4))}
 
                                         </div>
+                                    </div> 
+                                    <div style={{display: "flex", justifyContent: "space-evenly", padding: "0 4em"}}>
+                                        <div>7 Mariachis</div>
+                                        <div>
+                                            ${fee + (3 * (fee / 4))}
+
+                                        </div>
                                     </div>
                                     <div style={{display: "flex", justifyContent: "space-evenly", padding: "0 4em"}}>
                                         <div>8 Mariachis</div>
                                         <div>
                                             ${fee + (4 * (fee / 4))}
+
+                                        </div>
+                                    </div>
+                                    <div style={{display: "flex", justifyContent: "space-evenly", padding: "0 4em"}}>
+                                        <div>8 Mariachis</div>
+                                        <div>
+                                            ${fee + (5 * (fee / 4))}
 
                                         </div>
                                     </div>

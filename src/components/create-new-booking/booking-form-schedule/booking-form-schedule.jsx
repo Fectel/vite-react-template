@@ -185,10 +185,24 @@ const BookingFormSchedule = ({selectedStartTime,numberOfMariachis, setNumberOfMa
                                         </div>
                                     </div>
                                     <div style={{display: "flex", justifyContent: "space-evenly", padding: "0 2em"}}>
+                                        <div>7 Mariachis</div>
+                                        <div style={{fontWeight:"bold"}}>
+                                            ${fee + (3 * (fee / 4))}
+
+                                        </div>
+                                    </div>
+                                    <div style={{display: "flex", justifyContent: "space-evenly", padding: "0 2em"}}>
                                         <div>8 Mariachis</div>
                                         <div style={{fontWeight:"bold",
                                             marginLeft:".2em"}}>
                                             ${fee + (4 * (fee / 4))}
+
+                                        </div>
+                                    </div>
+                                    <div style={{display: "flex", justifyContent: "space-evenly", padding: "0 2em"}}>
+                                        <div>9 Mariachis</div>
+                                        <div style={{fontWeight:"bold"}}>
+                                            ${fee + (5 * (fee / 4))}
 
                                         </div>
                                     </div>
@@ -353,8 +367,14 @@ const BookingFormSchedule = ({selectedStartTime,numberOfMariachis, setNumberOfMa
                 case "6 Mariachis":
                     OOTFee = fee +( 2*(fee/4))
                     break;
+                case "7 Mariachis":
+                    OOTFee = fee +( 3*(fee/4))
+                    break;                    
                 case "8 Mariachis":
                     OOTFee = fee + (4*(fee/4))
+                    break;
+                case "9 Mariachis":
+                    OOTFee = fee +( 5*(fee/4))
                     break;
                 case "10 Mariachis":
                     OOTFee = fee + (6*(fee/4))
