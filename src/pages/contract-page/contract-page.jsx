@@ -372,9 +372,17 @@ const ContractPage = () => {
 
                 </div>
 
+            <div>
+                <h2>Electronic Signature Consent</h2>
+            </div>
                 <div style={{fontSize: ".8rem",
                     // backgroundColor:"red",
                     marginLeft:"1em", }}>I accept contract terms and conditions</div>
+                    <div>
+                        By checking here, you are consenting to the use of your electronic signautre in lieu of an 
+                        original signature on paper. You have the right to request that you sign a paper copy instead. By checking here, you are waiving that right.
+                        After consent, you may obtain an img of this contract.
+                    </div>
             </IonItem>
         )
     }
