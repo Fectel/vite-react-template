@@ -124,7 +124,9 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
 
     console.log(timeOfDayChoice)
     console.log(outOfTownFee)
-    console.log(distNum)
+    console.log(distNum, "Not INt")
+    console.log(parseInt(distNum), "INT")
+
     return (
         <IonGrid >
             {loadedPrices && (
@@ -463,7 +465,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                                     {/*190 @ $70 / $140*/}
                                                     {/*$150 @ $75/ $100*/}
                                                     {/*$110 @ $80/$60*/}
-                                                    {selectedStartTimeMaxPossibleHours > 1 &&  distNum > 140 ? (
+                                                    {selectedStartTimeMaxPossibleHours > 1 &&  parseInt(distNum) > 140 ? (
                                                         <div style={{textAlign:"center",fontWeight:"bold", color: "red", fontSize:".8rem", padding: ".2em"}}>
                                                             <div>3 Hr Booking Min.</div>
                                                         </div>
@@ -532,7 +534,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                                     {/*190 @ $70*/}
                                                     {/*$150 @ $75*/}
                                                     {/*$110 @ $80*/}
-                                                    {selectedStartTimeMaxPossibleHours > 1 &&  distNum > 140 ? (
+                                                    {selectedStartTimeMaxPossibleHours > 1 &&  parseInt(distNum) > 140 ? (
                                                         <div style={{textAlign:"center",fontWeight:"bold", color: "red", fontSize:".8rem", padding: ".2em"}}>
                                                             <div>3 Hr Booking Min.</div>
                                                         </div>
@@ -629,7 +631,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                             {/*300 @ $70 $200*/}
                                             {/*200 @ $80 $100*/}
 
-                                            {distNum > 140 ? (
+                                            {parseInt(distNum) > 140 ? (
                                                         <div style={{textAlign:"center",fontWeight:"bold", color: "red", fontSize:".8rem", padding: ".2em"}}>
                                                             <div>3 Hr Booking Min.</div>
                                                         </div>
@@ -778,7 +780,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
 
 
                                             {/*140 @ $80*/}
-                                            {selectedStartTimeMaxPossibleHours > 1 && distNum > 140 ? (
+                                            {selectedStartTimeMaxPossibleHours > 1 && parseInt(distNum) > 140 ? (
                                                 <div style={{textAlign:"center",fontWeight:"bold", color: "red", fontSize:".8rem", padding: ".2em"}}>
                                                     <div>3 Hr Booking Min.</div>
                                                 </div>
@@ -876,7 +878,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
 
                                             {/*80 @ $80*/}
                                             {/*220 @ $70*/}
-                                            {distNum > 140 ? (
+                                            {parseInt(distNum) > 140 ? (
                                                 <div style={{textAlign:"center",fontWeight:"bold", color: "red", fontSize:".8rem", padding: ".2em"}}>
                                                     <div>3 Hr Booking Min.</div>
                                                 </div>
@@ -1023,7 +1025,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                        {/* $230 @70*/}
                                        {/* $70 @80*/}
                                        
-                                       {distNum > 140 ? (
+                                       {parseInt(distNum) > 140 ? (
                                                 <div style={{textAlign:"center",fontWeight:"bold", color: "red", fontSize:".8rem", padding: ".2em"}}>
                                                     <div>3 Hr Booking Min.</div>
                                                 </div>
@@ -1217,7 +1219,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
 
                                        {/* $215 @70*/}
                                        {/* $35 @80*/}
-                                       {distNum > 140 ? (
+                                       {parseInt(distNum) > 140 ? (
                                                 <div style={{textAlign:"center",fontWeight:"bold", color: "red", fontSize:".8rem", padding: ".2em"}}>
                                                     <div>3 Hr Booking Min.</div>
                                                 </div>
@@ -1404,7 +1406,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                             </div>
                                         )}
                                         {/* 0 $0 & 150 $70 */}
-                                        {distNum > 140 ? (
+                                        {parseInt(distNum) > 140 ? (
                                                 <div style={{textAlign:"center",fontWeight:"bold", color: "red", fontSize:".8rem", padding: ".2em"}}>
                                                     <div>3 Hr Booking Min.</div>
                                                 </div>
