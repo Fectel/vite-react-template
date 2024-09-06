@@ -365,13 +365,12 @@ const ContractPage = () => {
                
 
                 <div style={{display:"flex", flexDirection: "column"}}>
-                <div>
-                <h2>Electronic Signature Consent</h2>
-            </div>
-            <div>
+                <div style={{width:"fit-content",}}>
+                    <h2>Electronic Signature Consent</h2>
+                 </div>
             <div
-                style={{display:"flex", flexDirection:"row"}}
-                >
+             style={{display:"flex", flexDirection:"row"}}>
+            <div>
                     <IonCheckbox style={{
                         width:"2em",
                         // backgroundColor:"blue",
