@@ -12,7 +12,8 @@ import {card, chevronForward, chevronUp, remove,add, shareOutline} from "ionicon
 import emailjs from "emailjs-com";
 import {
     adminDeleteClientBookingRequestDocument,
-    updateBookingStatusToContractReady
+    updateBookingStatusToContractReady,
+    updateBookingStatusToReservedCash
 } from "../../firebase";
 import {useAuth} from  "../../auth-context/auth-context.jsx"
 import axios from "axios";
@@ -46,6 +47,9 @@ export default function BookingsComponent({booking, setRefresh}){
     function onCLickViewBooking(){
         window.location.href = `/contract-page/${booking.docId}`
 
+    }
+    fucntion onPayDepositCashClick(){
+        updateBookingStatusToReservedCash(currentUser.uid, booking.docId)
     }
     function onApproveButtonClick(){
 
@@ -586,7 +590,7 @@ export default function BookingsComponent({booking, setRefresh}){
                                                 
                                                 <IonButton style={{fontSize: ".9rem", }} color="secondary"
                                                                                                 fill="outline"
-                                                        //    onClick={() => onPayRemainingBalanceClick()}
+                                                           onClick={() => onPayDepositCashClick()}
                                                 >
                                                     {/* <IonIcon style={{marginRight: ".5em"}} icon={card}/> */}
 

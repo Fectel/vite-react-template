@@ -102,19 +102,19 @@ const BookingFormSchedule = ({selectedStartTime,numberOfMariachis, setNumberOfMa
             fee = 210;
 
         }else if (distNum > 150 && distNum < 165 ){
-            fee = 220;
+            fee = 230;
 
         }else if (distNum > 165 && distNum < 180 ){
-            fee = 240;
+            fee = 250;
         }
         else if (distNum > 180 && distNum < 190 ){
-            fee = 260;
-
-        }else if (distNum > 190 && distNum < 220 ){
             fee = 280;
 
-        }else if (distNum > 220 && distNum < 230 ){
+        }else if (distNum > 190 && distNum < 220 ){
             fee = 300;
+
+        }else if (distNum > 220 && distNum < 230 ){
+            fee = 320;
 
         }
 
@@ -242,21 +242,21 @@ const BookingFormSchedule = ({selectedStartTime,numberOfMariachis, setNumberOfMa
                 fee = 210;
 
             }else if (distance > 150 && distance < 165 ){
-                fee = 220;
+                fee = 230;
 
             }else if (distance > 165 && distance < 180 ){
 
-                fee = 240;
+                fee = 250;
 
             }
             else if (distance > 180 && distance < 190 ){
-                fee = 260;
-
-            }else if (distance > 190 && distance < 220 ){
                 fee = 280;
 
-            }else if (distance > 220 && distance < 230 ){
+            }else if (distance > 190 && distance < 220 ){
                 fee = 300;
+
+            }else if (distance > 220 && distance < 230 ){
+                fee = 320;
 
             }
 
@@ -322,20 +322,20 @@ const BookingFormSchedule = ({selectedStartTime,numberOfMariachis, setNumberOfMa
                 fee = 210;
 
             }else if (distance > 140 && distance < 170 ){
-                fee = 220;
+                fee = 230;
 
             }else if (distance > 170 && distance < 190 ){
-                fee = 240;
+                fee = 250;
 
             }
             else if (distance > 190 && distance < 200 ){
-                fee = 260;
-
-            }else if (distance > 200 && distance < 220 ){
                 fee = 280;
 
-            }else if (distance > 220 && distance < 240 ){
+            }else if (distance > 200 && distance < 220 ){
                 fee = 300;
+
+            }else if (distance > 220 && distance < 240 ){
+                fee = 320;
 
             }
 
