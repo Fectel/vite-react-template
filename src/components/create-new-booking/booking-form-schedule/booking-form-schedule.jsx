@@ -52,7 +52,7 @@ const BookingFormSchedule = ({selectedStartTime,numberOfMariachis, setNumberOfMa
     },[selectedStartTimeMaxPossibleHours, value, selectedNumberOfHours, feeTotal])
 
 
-    const currentDate = new Date();
+    const currentDate = new Date(new Date().setDate(new Date().getDate()-1));
 
     const maxDate = new Date();
     maxDate.setMonth(12)
@@ -444,7 +444,7 @@ const BookingFormSchedule = ({selectedStartTime,numberOfMariachis, setNumberOfMa
                                 onClickDay={onClickDay}
                                 value={value}
                                 maxDate={maxDate}
-                                minDate={currentDate.setHours(-24)}
+                                minDate={currentDate}
 
                             />
                         </div>
