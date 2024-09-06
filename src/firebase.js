@@ -136,6 +136,7 @@ export const updateBookingStatusToReserved = async (userId, contractId, depositI
 }
 export const updateBookingStatusToReservedCash = async (userId, contractId) => {
     const status = "Reserved"
+    const adminBookingRef = doc(db, `adminBookingRequests/${contractId}`)
 
     await setDoc(doc(db, 'clients', userId, "bookingRequests", contractId), {
         contractId,
