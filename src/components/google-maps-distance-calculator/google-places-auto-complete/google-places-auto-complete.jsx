@@ -223,7 +223,7 @@ setAddressTravelTime, setAddressDistance,
                                         </div>
                                     </div>
                                     <div style={{display: "flex", justifyContent: "space-evenly", padding: "0 4em"}}>
-                                        <div>8 Mariachis</div>
+                                        <div>9 Mariachis</div>
                                         <div>
                                             ${fee + (5 * (fee / 4))}
 

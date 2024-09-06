@@ -291,8 +291,14 @@ const BookingFormSchedule = ({selectedStartTime,numberOfMariachis, setNumberOfMa
                 case "6 Mariachis":
                     OOTFee = fee +( 2*(fee/4))
                     break;
+                case "7 Mariachis":
+                    OOTFee = fee +( 3*(fee/4))
+                    break;
                 case "8 Mariachis":
                     OOTFee = fee + (4*(fee/4))
+                    break;
+                case "9 Mariachis":
+                    OOTFee = fee +( 5*(fee/4))
                     break;
                 case "10 Mariachis":
                     OOTFee = fee + (6*(fee/4))
