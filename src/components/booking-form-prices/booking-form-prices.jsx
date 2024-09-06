@@ -1081,7 +1081,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                         )}
                                        </div>
 
-                                            )
+                                            )}
                                        
                                        
                                         {/*$320 @70*/}
