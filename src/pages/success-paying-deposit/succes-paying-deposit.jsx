@@ -127,10 +127,10 @@ const SuccessPayingDeposit = () => {
 
     function Loading(){
         return (
-            <div style={{width: "100%", margin: "auto", height:"fit-content"}}>
-                <ReactLoading type="bars" color="#0000FF"
-                height={100} width={50} />
-            </div>
+            <div style={{width: "fit-content", margin: "auto", height:"fit-content"}}>
+            <ReactLoading type="bars" color="#0000FF"
+            height={100} width={50} />
+          </div>
         )
     }
 
