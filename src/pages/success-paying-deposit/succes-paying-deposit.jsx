@@ -146,32 +146,36 @@ const SuccessPayingDeposit = () => {
     return (
 
         <IonPage>
-            <HeaderWithoutImg />
             {loading ? (
             <div>{Loading}
             </div>
             ):(
-                <IonContent>
+                <div>
+                <HeaderWithoutImg />
 
-                {url !== "" && (
-                    <IonModal style={{
+                    <IonContent>
 
-                        marginTop:"8em",
-                    }}
-                              isOpen={true}
-                              canDismiss={true}
-                    >
+                    {url !== "" && (
+                        <IonModal style={{
 
-                        <PdfViewer url={url}
-                        amount={amount}
-                        />
-                    </IonModal>
-                )}
+                            marginTop:"8em",
+                        }}
+                                isOpen={true}
+                                canDismiss={true}
+                        >
 
-                            SUCCESS!
+                            <PdfViewer url={url}
+                            amount={amount}
+                            />
+                        </IonModal>
+                    )}
+
+                                SUCCESS!
 
 
-            </IonContent>
+                    </IonContent>
+                </div>
+               
             )}
             
 
