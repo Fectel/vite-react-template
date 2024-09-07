@@ -724,12 +724,13 @@ const ContractPage = () => {
         
         
                                             </div>
+                                            <div >Client's typed name:</div>
+                                            <div>{contract.clientName}</div>
         
                                             {renderCheckbox()}
         
         
-                                            <div >Client's typed name:</div>
-                                            <div>{contract.clientName}</div>
+                                           
                                             {/*</div>*/}
                                         </div>
         
