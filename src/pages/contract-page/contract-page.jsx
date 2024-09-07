@@ -361,13 +361,15 @@ const ContractPage = () => {
         console.log(signaturePadRef.isEmpty)
         console.log(signPadRef.isEmpty)
         return (
-            <div style={{backgroundColor: "black"}}>
+            <div >
                 <div style={{display:"flex", flexDirection: "column"}}>
                     <div style={{width:"100%",}}>
                     <h2>Electronic Signature Consent</h2>
                     </div>
                     <div
-                    style={{display:"flex", flexDirection:"row", widht:"100%"}}>
+                    style={{display:"flex", flexDirection:"row", widht:"fit-content",
+                        margin:"auto",
+                    }}>
                     <div>
                     <IonCheckbox style={{
                         width:"2em",
