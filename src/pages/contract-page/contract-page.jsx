@@ -361,9 +361,7 @@ const ContractPage = () => {
         console.log(signaturePadRef.isEmpty)
         console.log(signPadRef.isEmpty)
         return (
-            <IonItem disabled={!contractSignedBool} style={{backgroundColor: "black"}}>
-               
-
+            <div style={{backgroundColor: "black"}}>
                 <div style={{display:"flex", flexDirection: "column"}}>
                     <div style={{width:"100%",}}>
                     <h2>Electronic Signature Consent</h2>
@@ -392,9 +390,9 @@ const ContractPage = () => {
                         By checking here, you are consenting to the use of your electronic signautre in lieu of an 
                         original signature on paper. You have the right to request that you sign a paper copy instead. By checking here, you are waiving that right.
                         After consent, you may obtain an img of this contract.
-                    </div>
-           
-            </IonItem>
+                </div>
+        
+            </div>
         )
     }
 
