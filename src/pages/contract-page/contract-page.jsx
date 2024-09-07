@@ -365,12 +365,12 @@ const ContractPage = () => {
                
 
                 <div style={{display:"flex", flexDirection: "column"}}>
-                <div style={{width:"fit-content",}}>
+                    <div style={{width:"100%",}}>
                     <h2>Electronic Signature Consent</h2>
-                 </div>
-            <div
-             style={{display:"flex", flexDirection:"row"}}>
-            <div>
+                    </div>
+                    <div
+                    style={{display:"flex", flexDirection:"row", widht:"100%"}}>
+                    <div>
                     <IonCheckbox style={{
                         width:"2em",
                         // backgroundColor:"blue",
@@ -378,14 +378,14 @@ const ContractPage = () => {
 
                  checked={checked || contract.status === "Reserved"|| contract.status === "Ready For Performance!"} onIonChange={e => setChecked(e.detail.checked)} />
 
-                </div>
+                    </div>
 
-            <div style={{fontSize: ".8rem",
-                    // backgroundColor:"red",
-                    marginLeft:"1em", }}>I accept contract terms and conditions
-                </div>
+                    <div style={{fontSize: ".8rem",
+                        // backgroundColor:"red",
+                        marginLeft:"1em", }}>I accept contract terms and conditions
+                    </div>
                    
-            </div>
+                </div>
                 
                 </div>
                 <div style={{fontSize:".65rem"}}>
