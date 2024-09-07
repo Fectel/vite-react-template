@@ -583,7 +583,7 @@ export default function BookingsComponent({booking, setRefresh}){
 
 
 
-                                                <IonButton style={{fontSize: ".9rem", }} color="secondary"
+                                                {/* <IonButton style={{fontSize: ".9rem", }} color="secondary"
                                                            onClick={() => onPayRemainingBalanceClick()}
                                                 >
                                                     <IonIcon style={{marginRight: ".5em"}} icon={card}/>
@@ -592,7 +592,7 @@ export default function BookingsComponent({booking, setRefresh}){
                                                         Pay Remaining Balance: ${booking.balanceDue}
                                                     </div>
 
-                                                </IonButton>
+                                                </IonButton> */}
 
                                                 {booking.status === "Contract is Ready" && (
                                                     <IonButton style={{fontSize: ".9rem", }} color="secondary"
