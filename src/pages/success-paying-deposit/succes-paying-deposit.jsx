@@ -146,12 +146,13 @@ const SuccessPayingDeposit = () => {
     return (
 
         <IonPage>
+                            <HeaderWithoutImg />
+
             {loading ? (
-            <div>{Loading}
+            <div>{Loading()}
             </div>
             ):(
                 <div>
-                <HeaderWithoutImg />
 
                     <IonContent>
 
