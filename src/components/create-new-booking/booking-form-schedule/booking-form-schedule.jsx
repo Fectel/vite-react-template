@@ -55,7 +55,7 @@ const BookingFormSchedule = ({selectedStartTime,numberOfMariachis, setNumberOfMa
     const currentDate = new Date(new Date().setDate(new Date().getDate()-1));
 
     const maxDate = new Date();
-    maxDate.setMonth(12)
+    maxDate.setMonth(20)
 
     function onClickDay(){
         console.log("onClickDay", value)
