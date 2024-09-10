@@ -884,7 +884,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                                 </div>
                                             ): (
                                                 <div>
-                                                {selectedStartTimeMaxPossibleHours > 1 && dateWithinTwoWeeks ? (
+                                                {selectedStartTimeMaxPossibleHours > 1 && (
                                                     <BookingFormPricesComponent
                                                         feePrice={1400}
                                                         setFeeTotal={setFeeTotal}
@@ -896,34 +896,14 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                                         mariachiPackageId={6}
                                                         setMariachiPackageId={setMariachiPackageId}
                                                         displayPrice="2 Hrs $1400"
-                                                        discountedPriceDisplay="2hrs $1200"
+                                                        discountedPriceDisplay="2hrs $1250"
                                                         discounted={dateWithinTwoWeeks}
-                                                        discountedFeePrice={1225}
+                                                        discountedFeePrice={1250}
                                                         discountedMariachiPackageId={19}
                                                         setSelectedNumberOfHours={setSelectedNumberOfHours}
                                                         numberOfHours={2}/>
     
-                                                ):(
-                                                    <BookingFormPricesComponent
-                                                        feePrice={1400}
-                                                        setFeeTotal={setFeeTotal}
-                                                        numberOfMariachis={numberOfMariachis}
-                                                        mariachiSize="7 Mariachis"
-                                                        setNumberOfMariachis={setNumberOfMariachis}
-                                                        setSelectedPrice={setSelectedPrice}
-                                                        selectedPrice={selectedPrice}
-                                                        mariachiPackageId={6}
-                                                        setMariachiPackageId={setMariachiPackageId}
-                                                        displayPrice="2 Hrs $1400"
-                                                        discountedPriceDisplay="2hrs $1300"
-                                                        discounted={true}
-                                                        discountedFeePrice={1300}
-                                                        discountedMariachiPackageId={19}
-                                                        setSelectedNumberOfHours={setSelectedNumberOfHours}
-                                                        numberOfHours={2}/>
-    
-                                                )
-                                                }
+                                                ) }
                                                 </div>
                                             )}
                                            
@@ -943,10 +923,10 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                                     mariachiPackageId={7}
                                                     setMariachiPackageId={setMariachiPackageId}
                                                     displayPrice="3 Hrs $2100"
-                                                    discountedPriceDisplay="3hrs $1800"
+                                                    discountedPriceDisplay="3hrs $1900"
                                                     discountedMariachiPackageId={20}
                                                     discounted={dateWithinTwoWeeks}
-                                                    discountedFeePrice={1800}
+                                                    discountedFeePrice={1900}
                                                     setSelectedNumberOfHours={setSelectedNumberOfHours}
                                                     numberOfHours={3}/>
                                             ):(
@@ -1138,7 +1118,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                                 selectedPrice={selectedPrice}
                                                 mariachiPackageId={8}
                                                 setMariachiPackageId={setMariachiPackageId}
-                                                 displayPrice="1 Hr $800"
+                                                 displayPrice="1 Hr $825"
                                                 discountedPriceDisplay=""
                                                 discounted={false}
                                                 discountedFeePrice={0}
