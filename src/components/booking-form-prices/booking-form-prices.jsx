@@ -1469,7 +1469,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                                         
                                         {/*$300 @ $70*/}
                                          {/* $0 @$80 */}
-                                        {selectedStartTimeMaxPossibleHours > 2  (
+                                        {selectedStartTimeMaxPossibleHours > 2 && dateWithinTwoWeeks ? (
                                             <BookingFormPricesComponent
                                                 feePrice={2700}
                                                 setFeeTotal={setFeeTotal}
