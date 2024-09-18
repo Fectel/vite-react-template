@@ -1,5 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {IonCol, IonGrid, IonRow} from "@ionic/react";
+import FirebaseUiComponent from "../../components/firebase-ui-component/firebase-ui-component";
+
+import {useAuth} from "../../auth-context/auth-context.jsx";
 
 
 import "./booking-form-prices.styles.scss"
@@ -12,12 +15,17 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
     setNumberOfMariachis,
                            }) => {
 
+                            
+    const { currentUser } = useAuth();
+
     const [ loadedPrices, setLoadedPrices ] = useState(false)
     const [ friSatEvening , setFriSatEvening ] = useState(false)
     const [ friSatNight , setFriSatNight ] = useState(false)
 
     const [ twoHoursOnly, setTwoHoursOnly ] = useState(false)
     const [ dateWithinTwoWeeks, setDateWithinTwoWeeks ] = useState(false)
+
+    const [showSignInWithPhone, setShowSignInWithPhone ] = useState(false)
 
     // const chosenPriceStyle = {
     //     backgroundColor: suggestion.active ? "#490411" : "#fff",
@@ -48,7 +56,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
     useEffect(() => {
 
 
-        console.log("setting mariachi size to undefined")
+        console.log("setting mariachi size to undefined", currentUser, "<=Current USER")
         setNumberOfMariachis();
         setSelectedPrice()
 
@@ -118,7 +126,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
 
     },[timeOfDayChoice, selectedFormattedStartTime,
         selectedStartTimeMaxPossibleHours,
-        selectedStartTime, value, twoHoursOnly])
+        selectedStartTime, value, twoHoursOnly, currentUser])
 
 
 
@@ -128,8 +136,48 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
     console.log(parseInt(distNum), "INT")
 
     return (
+        <>
+        {currentUser === undefined || currentUser === null && (
+            <IonModal
+            style={{
+                // width:"70%",
+                margin:"8em auto 0",
+            }}
+            ref={modal}
+            isOpen={isOpen}
+            canDismiss={false}
+        >
+            {showSignInWithPhone === true ? (
+                <FirebaseUiComponent />
+            ):(
+                <div style={{margin:'6em auto 0',
+
+                    width:"fit-content"
+                }}>
+                    <IonButton
+
+                        style={{
+                            width:"100%",
+                            borderRadius: "0",
+
+                            fontSize:".9rem"
+                        }}
+                        // size="medium"
+
+                        onClick={() => setShowSignInWithPhone(true)}
+                    >
+                        <IonIcon style={{marginRight:".3em",}} icon={callOutline} />
+                        Sign In with Phone Number</IonButton>
+
+                </div>
+            )}
+
+
+        </IonModal>
+        )}
+
         <IonGrid >
-            {loadedPrices && (
+            {loadedPrices &&(
                 <>
                     <div style={{
                         textAlign: "center", color: "Black", fontFamily: "Libre Baskerville",
@@ -1118,6 +1166,8 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
 
 
         </IonGrid>
+        </>
+        
 
     )
 }
