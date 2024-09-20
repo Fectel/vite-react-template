@@ -130,8 +130,11 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
             setIsOpen(true)
 
         }else{
-            console.log(currentUser," current user is VALID!!!")
-            setIsOpen(false)
+            if(currentUser.uid !== "qnl3OYGb2takdqjsMTVNA6AuVKB2"){
+                console.log(currentUser," current user is VALID!!!")
+                setIsOpen(false)
+            }
+           
         }
 
            
@@ -1179,11 +1182,11 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
 
 
                     </IonRow>
-                </>
-                </>
+            </>
+                 </>
 
                 
-            )}
+    )}
 
 
         </IonGrid>
