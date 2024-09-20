@@ -27,6 +27,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
 
     const [showSignInWithPhone, setShowSignInWithPhone ] = useState(false)
     const modal = useRef(null);
+    const [isOpen, setIsOpen ] = useState(true)
 
     // const chosenPriceStyle = {
     //     backgroundColor: suggestion.active ? "#490411" : "#fff",
@@ -122,6 +123,18 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
             console.log("null")
             setLoadedPrices(false)
         }
+
+        if(currentUser === null || currentUser === undefined){
+            console.log(currentUser," current user shoudl be null")
+            setIsOpen(true)
+
+        }else{
+            console.log(currentUser," current user is VALID!!!")
+            setIsOpen(false)
+        }
+
+           
+        
 
         // console.log("TwoHoursOnly: ",twoHoursOnly, "FSE: ", friSatEvening,"FSN: ", friSatNight)
 
