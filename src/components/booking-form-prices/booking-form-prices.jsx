@@ -141,7 +141,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
 
     },[timeOfDayChoice, selectedFormattedStartTime,
         selectedStartTimeMaxPossibleHours,
-        selectedStartTime, value, twoHoursOnly, currentUser])
+        selectedStartTime, value, twoHoursOnly, currentUser, isOpen])
 
 
 
