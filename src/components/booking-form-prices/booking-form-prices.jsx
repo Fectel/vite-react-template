@@ -152,8 +152,11 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
 
     return (
         <>
-        {/* {currentUser === undefined || currentUser === null && ( */}
-            <IonModal
+       
+
+        <IonGrid >
+             {/* {currentUser === undefined || currentUser === null && ( */}
+             <IonModal
             style={{
                 // width:"70%",
                 margin:"8em auto 0",
@@ -190,8 +193,6 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
 
         </IonModal>
         {/* )} */}
-
-        <IonGrid >
             {loadedPrices &&(
                 <>
                     <div style={{
