@@ -26,6 +26,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
     const [ dateWithinTwoWeeks, setDateWithinTwoWeeks ] = useState(false)
 
     const [showSignInWithPhone, setShowSignInWithPhone ] = useState(false)
+    const modal = useRef(null);
 
     // const chosenPriceStyle = {
     //     backgroundColor: suggestion.active ? "#490411" : "#fff",
