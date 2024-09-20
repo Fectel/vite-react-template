@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useRef} from "react";
-import {IonCol, IonGrid, IonRow, IonModal} from "@ionic/react";
+import {IonCol, IonGrid, IonRow, IonModal, IonButton} from "@ionic/react";
 import FirebaseUiComponent from "../../components/firebase-ui-component/firebase-ui-component";
 
 import {useAuth} from "../../auth-context/auth-context.jsx";
