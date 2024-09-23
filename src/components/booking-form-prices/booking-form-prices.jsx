@@ -163,7 +163,7 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
              {/* )} */}
             {loadedPrices &&(
                 <>
-                <IonModal
+                {/* <IonModal
             style={{
                 // width:"70%",
                 margin:"8em auto 0",
@@ -172,9 +172,9 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
             isOpen={isOpen}
             canDismiss={false}
         >
-            {showSignInWithPhone === true ? (
+            {/* {showSignInWithPhone === true ? (
                 <FirebaseUiComponent />
-            ):(
+            ):( */}
                 <div style={{margin:'6em auto 0',
 
                     width:"fit-content"
@@ -195,10 +195,10 @@ const BookingFormPrices = ({timeOfDayChoice, selectedFormattedStartTime,
                         Sign In with Phone Number</IonButton>
 
                 </div>
-            )}
+            {/* )} */}
 
 
-        </IonModal>
+        {/* </IonModal> */}
         <>
                     <div style={{
                         textAlign: "center", color: "Black", fontFamily: "Libre Baskerville",
