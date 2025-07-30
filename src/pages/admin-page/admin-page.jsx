@@ -36,7 +36,7 @@ export default function AdminPage(){
 
 
     }
-    const adminId = "qnl3OYGb2takdqjsMTVNA6AuVKB2";
+    const adminId = "ZT08gAsYE0Nm33eMFne2TlpUh9A3";
 
 
     useEffect( () => {
