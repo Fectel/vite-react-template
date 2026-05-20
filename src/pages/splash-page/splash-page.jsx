@@ -40,6 +40,7 @@ export default function SplashPage(){
                                     style={{display:"flex",
                                         width:"fit-content",
                                         fontSize:".8rem",
+                                            marginTop:"2em",
                                         // backgroundColor:"red",
                                         // border:"solid thin",
                                         flexDirection:"column"}}
